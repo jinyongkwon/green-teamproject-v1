@@ -1,0 +1,52 @@
+.box-bg {
+    background-image: url("");
+    background-size: 100%;
+    background-position: center;
+
+}
+
+.box-body {
+    width: 100%;
+    height: 85%;
+}
+
+.box-img {
+    width: 100%;
+    height: 100%;
+}
+
+.box-body-half {
+    width: 100%;
+    height: 50%;
+}
+
+.game-text {
+    font-family: 'nice';
+    color: #75d9d4;
+    font-size: 25px;
+    font-weight: 300;
+    text-decoration-line: none;
+}
+
+.carousel-text {
+    font-family: 'nice';
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    text-decoration-line: none;
+}
+
+.game-text:hover{
+    color: #06ECfb;
+}
+
+.box-game{
+    width: 100%;
+    height: 70%;
+}
+
+.box-carousel{
+    width: 80%;
+    height: 90%;
+}
+

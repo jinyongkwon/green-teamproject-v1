@@ -1,0 +1,47 @@
+{{>/layout/header}}
+<link rel="stylesheet" href="/css/store.css">
+<div class="box-body">
+    <div class="market-outer d-flex justify-content-around align-items-center">
+        <div class="market-left d-flex justify-content-center">
+            <!--랜덤박스 시작-->
+            <div class="market-left-box d-flex flex-column justify-content-center ">
+                <div class="random-title d-flex justify-content-center align-items-center ">
+                    <div class="random-txt mt-3">
+                        <p id="random-txt">무기(뽑아보쉴??) 최소 1000코인(100~1000 랜덤)</p>
+                    </div>
+                </div>
+                <div class="random-box  d-flex justify-content-center align-items-center">
+                    <div id="random-img" class="random-img d-flex justify-content-center align-items-center">❓</div>
+                    <div class="full d-flex flex-column align-items-center">
+                        <input type="text" id="timer-text" class="timer-text mt-3 text-center" value="무료 뽑기!!"
+                            readonly></input>
+                        <p id="present-img" class="random-img text-center">🎁</p>
+                    </div>
+                </div>
+            </div>
+            <!--랜덤박스 끝-->
+        </div>
+        <div class="market-right">
+            <!--무기목록 시작-->
+            <h1 class="weapon-title mt-3 ">무기 목록</h1>
+
+            <ul>
+                <li class="weapon-name">꽝</li>
+                <li class="weapon-percent">- 확률: 50%</li>
+                <li class="weapon-name">무기1: html</li>
+                <li class="weapon-percent">-확률:25%</li>
+                <li class="weapon-name">무기2: java</li>
+                <li class="weapon-percent">-확률:15%</li>
+                <li class="weapon-name">무기3: JSP</li>
+                <li class="weapon-percent">-확률:8%</li>
+                <li class="weapon-name">무기4: Spring Boot</li>
+                <li class="weapon-percent">-확률:2%</li>
+
+            </ul>
+            <!--무기목록 끝-->
+        </div>
+    </div>
+</div>
+<script src="/js/store.js"></script>
+
+{{>/layout/footer}}

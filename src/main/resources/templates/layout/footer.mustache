@@ -1,0 +1,49 @@
+<div class="p-4 bg-primary box-header d-flex justify-content-between">
+    <div class="box-footer-left d-flex justify-content-around">
+        <div class="box-footer-btn">
+            {{#store}}
+            <a href="/ready" class="btn footer-btn">준비</a>
+            {{/store}}
+            {{#ready}}
+            <a href="/store" class="btn footer-btn">상점</a>
+            {{/ready}}
+        </div>
+        <div class="box-footer-btn ">
+            <button type="button" class="btn footer-btn" id="btn-recovery">회복</button>
+        </div>
+        <div class="box-footer-btn">
+            <a href="/" class="btn btn footer-btn">메인으로</a>
+        </div>
+    </div>
+    <div class="box-footer-right d-flex justify-content-around">
+        <div class="box-footer-weapon">
+            <img class="full" src="/image/html.png">
+            <div class="footer-weapon-text">
+                <p id="html">x0</p>
+            </div>
+        </div>
+        <div class="box-footer-weapon">
+            <img class="full" src="/image/java.png">
+            <div class="footer-weapon-text" id="java">
+                <p id="java">x0</p>
+            </div>
+        </div>
+        <div class="box-footer-weapon">
+            <img class="full" src="/image/jsp.png">
+            <div class="footer-weapon-text" id="jsp">
+                <p id="jsp">x0</p>
+            </div>
+        </div>
+        <div class="box-footer-weapon">
+            <img class="full" src="/image/spring.png">
+            <div class="footer-weapon-text" id="spring">
+                <p id="spring">x0</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/js/common.js"></script>
+</body>
+
+</html>
