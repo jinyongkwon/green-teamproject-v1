@@ -32,7 +32,7 @@ public class PageController {
     @GetMapping("/")
     public String main(Model model) {
         model.addAttribute("main", true);
-        model.addAttribute("user", true);
+        // model.addAttribute("user", true);
         return "main";
     }
 
