@@ -28,9 +28,3 @@ spring:
   output:
     ansi:
       enabled: always
-
-spring:
-  profiles:
-    active:
-      - jy
-
