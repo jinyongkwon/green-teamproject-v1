@@ -244,7 +244,7 @@ function attack() { // 몬스터와 캐릭터를 공격시킴
                             userLose();
                             $("#textbox").prepend(`2초후에 페이지를 벗어납니다.\n`);
                             setTimeout(() => {
-                                location.href = "/ready";
+                                location.href = "/s/ready";
                             }, 2000);
                         }
                     })
@@ -253,7 +253,7 @@ function attack() { // 몬스터와 캐릭터를 공격시킴
                 userWin();
                 $("#textbox").prepend(`2초후에 페이지를 벗어납니다.\n`);
                 setTimeout(() => {
-                    location.href = "/ready";
+                    location.href = "/s/ready";
                 }, 2000);
             }
         });

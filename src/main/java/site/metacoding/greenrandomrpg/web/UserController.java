@@ -123,12 +123,6 @@ public class UserController {
     @GetMapping("/")
     public String main(Model model) {
         model.addAttribute("main", true);
-        User principal = (User) session.getAttribute("principal");
-        if (principal != null) {
-            model.addAttribute("user", true);
-        } else {
-            model.addAttribute("user", false);
-        }
         return "main";
     }
 
@@ -148,11 +142,23 @@ public class UserController {
     // }
 
     // 준비 페이지
-    @GetMapping("/ready")
+    @GetMapping("/s/ready")
     public String ready(Model model) {
-        model.addAttribute("principal", true);
         model.addAttribute("ready", true);
         return "readyBattlePage";
+    }
+
+    // 상점 페이지
+    @GetMapping("/s/store")
+    public String store(Model model) {
+        model.addAttribute("store", true);
+        return "store";
+    }
+
+    // 전투 페이지
+    @GetMapping("/s/battle")
+    public String battle(Model model) {
+        return "battlePage";
     }
 
 }

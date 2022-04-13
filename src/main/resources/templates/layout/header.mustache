@@ -23,8 +23,8 @@
         <!-- 헤더 시작 -->
         <!-- 왼쪽 -->
         <div class="p-4 bg-primary box-header d-flex justify-content-between">
-            
-            {{#user}}
+
+            {{#principal}}
             <input type="hidden" id="id" value="{{principal.id}}">
             <div class="d-flex box-header-left">
                 <div class="d-flex justify-content-center box-header-name ">
@@ -58,8 +58,9 @@
             <!-- 오른쪽 -->
             {{#main}}
             <div class="d-flex justify-content-end box-header-right">
-                <button class="btn btn-info header-btn-font  header-btn">사람들과 대화하기</button>
-                <button class="btn btn-info header-btn-font header-btn">질문게시판</button>
+                <button id="btn-chat" class="btn header-btn-font  header-btn">사람들과 대화하기</button>
+                <button id="btn-question" class="btn header-btn-font header-btn">질문게시판</button>
+                <button id="btn-logout" class="btn header-btn-font header-btn">로그아웃</button>
             </div>
             {{/main}}
             {{^main}}
@@ -74,9 +75,9 @@
                 </div>
             </div>
             {{/main}}
-            {{/user}}
+            {{/principal}}
             <!-- 로그인 안했을 때 -->
-            {{^user}}
+            {{^principal}}
             <div class="d-flex  justify-content-start box-header-no-login">
                 <div class="d-flex header-font ml-30">
                     <a href="/login-form" class="btn header-font">로그인</a>
@@ -85,7 +86,7 @@
                     <a href="/join-form" class="btn header-font">회원가입</a>
                 </div>
             </div>
-            {{/user}}
+            {{/principal}}
         </div>
         <!-- 헤더 끝 -->
         <script>
