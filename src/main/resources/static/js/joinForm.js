@@ -46,11 +46,13 @@ async function nicknameSameCheck() {
     let responseParse = await response.json();
 
     if (responseParse.code == 1) {
+
         if (responseParse.data == true) {
             valid.nickname.state = true;
         } else {
             valid.nickname.state = false;
             $("#nickname-error").show();
+
         }
     } else {
         alert(responseParse.msg);
@@ -69,6 +71,7 @@ async function usernameSameCheck() {
         } else {
             valid.username.state = false;
             $("#username-error").show();
+
         }
     } else {
         alert(responseParse.msg);
