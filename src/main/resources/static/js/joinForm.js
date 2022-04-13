@@ -19,7 +19,7 @@ $("#password").blur(() => {
     passwordSameCheck();
 });
 
-$("#smae-password").blur(() => {
+$("#same-password").blur(() => {
     passwordSameCheck();
 });
 
@@ -40,17 +40,17 @@ function check() {
 };
 
 async function nicknameSameCheck() {
-    let nickname = $("#username").val();
+    let nickname = $("#nickname").val();
 
     let response = await fetch(`/api/user/nickname-same-check?nickname=${nickname}`);
     let responseParse = await response.json();
 
     if (responseParse.code == 1) {
-        if (!responseParse.data == false) {
+        if (responseParse.data == true) {
+            valid.nickname.state = true;
+        } else {
             valid.nickname.state = false;
             $("#nickname-error").show();
-        } else {
-            valid.nickname.state = true;
         }
     } else {
         alert(responseParse.msg);
@@ -64,11 +64,11 @@ async function usernameSameCheck() {
     let responseParse = await response.json();
 
     if (responseParse.code == 1) {
-        if (!responseParse.data == false) {
+        if (responseParse.data == true) {
+            valid.username.state = true;
+        } else {
             valid.username.state = false;
             $("#username-error").show();
-        } else {
-            valid.username.state = true;
         }
     } else {
         alert(responseParse.msg);
@@ -80,6 +80,7 @@ function passwordSameCheck() {
     let samePassword = $("#same-password").val();
     if (password === samePassword) {
         valid.password.state = true;
+        $("#password-error").hide();
     } else {
         valid.password.state = false;
         $("#password-error").show();
