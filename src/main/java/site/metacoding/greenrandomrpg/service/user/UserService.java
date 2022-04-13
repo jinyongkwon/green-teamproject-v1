@@ -29,23 +29,24 @@ public class UserService {
     // return null;
     // }
 
-    public String 유저네임중복검사(String username) {
+    public boolean 유저네임중복검사(String username) {
+        System.out.println(username);
         User userEntity = userRepository.mUsernameSameCheck(username);
 
         if (userEntity == null) {
-            return "노중복";
+            return true;
         } else {
-            return "중복";
+            return false;
         }
     }
 
-    public String 닉네임중복검사(String nickname) {
+    public boolean 닉네임중복검사(String nickname) {
         User userEntity = userRepository.mNicknameSameCheck(nickname);
 
         if (userEntity == null) {
-            return "닉네임노중복";
+            return true;
         } else {
-            return "닉네임중복";
+            return false;
         }
     }
 

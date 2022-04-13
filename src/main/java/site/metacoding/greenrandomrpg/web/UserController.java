@@ -54,17 +54,25 @@ public class UserController {
     // }
 
     // 유저네임 중복검사
-    @GetMapping("/user/username/same-check")
+    @GetMapping("/api/user/username-same-check")
     public @ResponseBody ResponseDto<?> usernameSameCheck(String username) {
-        String data = userService.유저네임중복검사(username);
-        return new ResponseDto<>(1, "통신성공", data);
+        boolean isNotSame = userService.유저네임중복검사(username);
+        if (isNotSame) {
+            return new ResponseDto<>(1, "검사성공", isNotSame);
+        } else {
+            return new ResponseDto<>(1, "이미 사용중인 아이디입니다!!", isNotSame);
+        }
     }
 
     // 유저닉네임 중복검사
-    @GetMapping("/user/nickname/same-check")
+    @GetMapping("/api/user/nickname-same-check")
     public @ResponseBody ResponseDto<?> nicknameSameCheck(String nickname) {
-        String data = userService.닉네임중복검사(nickname);
-        return new ResponseDto<>(1, "통신성공", data);
+        boolean isNotSame = userService.닉네임중복검사(nickname);
+        if (isNotSame) {
+            return new ResponseDto<>(1, "검사성공", isNotSame);
+        } else {
+            return new ResponseDto<>(1, "이미 사용중인 닉네임입니다!!", isNotSame);
+        }
     }
 
     // 회원가입 페이지
