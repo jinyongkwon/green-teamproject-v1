@@ -21,6 +21,8 @@ public class JoinDto {
         user.setPassword(this.password);
         user.setEmail(this.email);
         user.setCoin(0);
+        user.getRpg().setAttack(100);
+        user.getRpg().setMaxHp(200);
         return user;
     }
 

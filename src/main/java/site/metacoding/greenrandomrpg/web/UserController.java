@@ -25,6 +25,7 @@ import site.metacoding.greenrandomrpg.service.user.UserService;
 import site.metacoding.greenrandomrpg.web.dto.ResponseDto;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
 import site.metacoding.greenrandomrpg.web.dto.user.LoginDto;
+import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -126,20 +127,21 @@ public class UserController {
         return "main";
     }
 
-    // @PutMapping("/main/{id}")
-    // public @ResponseBody ResponseDto<?> coinUpdate(@PathVariable Integer id,
-    // @RequestBody CoinUpdateDto coinupdateDto) {
+    // 업데이트
+    @PutMapping("/user/{id}")
+    public @ResponseBody ResponseDto<?> update(@PathVariable Integer id, @RequestBody UpdateDto updateDto) {
 
-    // User principal = (User) session.getAttribute("principal");
+        User principal = (User) session.getAttribute("principal");
+        System.out.println("principal" + principal);
 
-    // if (principal.getId() != id) {
-    // throw new RuntimeException("동기화되지 않았다..");
-    // }
-    // User userCoin = userService.코인업데이트(id, coinupdateDto);
-    // session.setAttribute("principal", userCoin);
-    // System.out.println("코인업데이트 잘됐나 확인*************" + userCoin);
-    // return new ResponseDto<>(1, "수정완료", null);
-    // }
+        if (principal.getId() != id) {
+            throw new RuntimeException("동기화되지 않았다..");
+        }
+        User userUpdate = userService.업데이트(id, updateDto);
+        session.setAttribute("principal", userUpdate);
+        System.out.println("업데이트 잘됐나 확인*************" + userUpdate);
+        return new ResponseDto<>(1, "수정완료", null);
+    }
 
     // 준비 페이지
     @GetMapping("/s/ready")

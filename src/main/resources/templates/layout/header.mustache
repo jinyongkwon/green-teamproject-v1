@@ -50,8 +50,8 @@
                 {{/ready}}
                 {{#main}}
                 <div class="d-flex justify-content-center box-header-coin header-font">
-                    <input type="text" class="header-font text-right full" value="코인 : " readonly>
-                    <input type="text" class="header-font full" value="&nbsp;350" readonly>
+                    <input type="text" id="user-coin" class="header-font text-right full" value="코인 : " readonly>
+                    <input type="text" class="header-font full" value="{{principal.coin}}" readonly>
                 </div>
                 {{/main}}
             </div>
@@ -70,8 +70,8 @@
                     <input type="text" id="user-power" class="header-btn-font ml-30 full" value="&nbsp;350" readonly>
                 </div>
                 <div class="d-flex justify-content-center header-right-height-half header-btn-font mt-3">
-                    <input type="text" class="header-btn-font text-right full" value="코인 " readonly>
-                    <input type="text" id="user-coin" class="header-btn-font ml-30 full" value="&nbsp;20000" readonly>
+                    <input type="text"  class="header-btn-font text-right full" value="코인 " readonly>
+                    <input type="text" id="user-coin" class="header-btn-font ml-30 full" value="{{principal.coin}}" readonly>
                 </div>
             </div>
             {{/main}}
@@ -89,6 +89,5 @@
             {{/principal}}
         </div>
         <!-- 헤더 끝 -->
-        <script>
-
-        </script>
+        
+        <script src="/js/header.js"></script>

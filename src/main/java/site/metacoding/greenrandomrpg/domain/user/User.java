@@ -5,9 +5,12 @@ import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -16,6 +19,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.metacoding.greenrandomrpg.domain.rpg.Rpg;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -41,6 +45,10 @@ public class User {
     private String email;
 
     private Integer coin;
+
+    @JoinColumn(name = "rpgId")
+    @OneToOne(fetch = FetchType.EAGER)
+    private Rpg rpg;
 
     @Column(nullable = false)
     @CreatedDate

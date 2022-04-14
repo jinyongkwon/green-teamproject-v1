@@ -3,6 +3,8 @@ package site.metacoding.greenrandomrpg.service.user;
 import java.util.List;
 import java.util.Optional;
 
+import com.mysql.cj.x.protobuf.MysqlxCrud.Update;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +13,7 @@ import site.metacoding.greenrandomrpg.domain.user.User;
 import site.metacoding.greenrandomrpg.domain.user.UserRepository;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
 import site.metacoding.greenrandomrpg.web.dto.user.LoginDto;
+import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
 
 @RequiredArgsConstructor
 @Service
@@ -18,16 +21,22 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    // @Transactional
-    // public User 코인업데이트(Integer id, CoinUpdateDto coinUpdateDto) {
-    // Optional<User> userCoinOp = userRepository.findById(id);
-    // if (userCoinOp.isPresent()) {
-    // User userEntity = userCoinOp.get();
-    // userEntity.setCoin(coinUpdateDto.getCoin());
-    // return userEntity;
-    // }
-    // return null;
-    // }
+    @Transactional
+    public User 업데이트(Integer id, UpdateDto UpdateDto) {
+        Optional<User> userOp = userRepository.findById(id);
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+            userEntity.setCoin(UpdateDto.getCoin());
+            userEntity.getRpg().setAttack(UpdateDto.getAttack());
+            userEntity.getRpg().setHp(UpdateDto.getHp());
+            userEntity.getRpg().setMaxHp(UpdateDto.getHp());
+
+            System.out.println("변화된 userEntity:" + userEntity);
+            return userEntity;
+
+        }
+        return null;
+    }
 
     public boolean 유저네임중복검사(String username) {
         System.out.println(username);
