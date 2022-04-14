@@ -21,10 +21,14 @@ $("#password").blur(() => {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 $("#smae-password").blur(() => {
 =======
 $("#same-password").blur(() => {
 >>>>>>> 9f0cddb7ec088dd11a5160f568d6fdce54b16e26
+=======
+$("#same-password").blur(() => {
+>>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
 =======
 $("#same-password").blur(() => {
 >>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
@@ -50,10 +54,14 @@ function check() {
 async function nicknameSameCheck() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     let nickname = $("#username").val();
 =======
     let nickname = $("#nickname").val();
 >>>>>>> 9f0cddb7ec088dd11a5160f568d6fdce54b16e26
+=======
+    let nickname = $("#nickname").val();
+>>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
 =======
     let nickname = $("#nickname").val();
 >>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
@@ -64,12 +72,15 @@ async function nicknameSameCheck() {
     if (responseParse.code == 1) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!responseParse.data == false) {
             valid.nickname.state = false;
             $("#nickname-error").show();
         } else {
             valid.nickname.state = true;
 =======
+=======
+>>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
 =======
 >>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
         if (responseParse.data == true) {
@@ -79,7 +90,10 @@ async function nicknameSameCheck() {
             valid.nickname.state = false;
             $("#nickname-error").show();
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 9f0cddb7ec088dd11a5160f568d6fdce54b16e26
+=======
+>>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
 =======
 >>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
         }
@@ -97,12 +111,15 @@ async function usernameSameCheck() {
     if (responseParse.code == 1) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!responseParse.data == false) {
             valid.username.state = false;
             $("#username-error").show();
         } else {
             valid.username.state = true;
 =======
+=======
+>>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
 =======
 >>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
         if (responseParse.data == true) {
@@ -112,7 +129,10 @@ async function usernameSameCheck() {
             valid.username.state = false;
             $("#username-error").show();
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 9f0cddb7ec088dd11a5160f568d6fdce54b16e26
+=======
+>>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
 =======
 >>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
         }
@@ -128,9 +148,13 @@ function passwordSameCheck() {
         valid.password.state = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         $("#password-error").hide();
 >>>>>>> 9f0cddb7ec088dd11a5160f568d6fdce54b16e26
+=======
+        $("#password-error").hide();
+>>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
 =======
         $("#password-error").hide();
 >>>>>>> b2e37735cc0dd0518617dfba24e26a88a8b9a34f
