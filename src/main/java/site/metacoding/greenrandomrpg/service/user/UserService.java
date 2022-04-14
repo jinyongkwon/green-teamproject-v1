@@ -1,14 +1,13 @@
 package site.metacoding.greenrandomrpg.service.user;
 
-import java.util.List;
 import java.util.Optional;
-
-import com.mysql.cj.x.protobuf.MysqlxCrud.Update;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.greenrandomrpg.domain.rpg.Rpg;
+import site.metacoding.greenrandomrpg.domain.rpg.RpgRepository;
 import site.metacoding.greenrandomrpg.domain.user.User;
 import site.metacoding.greenrandomrpg.domain.user.UserRepository;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
@@ -20,6 +19,7 @@ import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final RpgRepository rpgRepository;
 
     @Transactional
     public User 업데이트(Integer id, UpdateDto UpdateDto) {
@@ -30,10 +30,7 @@ public class UserService {
             userEntity.getRpg().setAttack(UpdateDto.getAttack());
             userEntity.getRpg().setHp(UpdateDto.getHp());
             userEntity.getRpg().setMaxHp(UpdateDto.getHp());
-
-            System.out.println("변화된 userEntity:" + userEntity);
             return userEntity;
-
         }
         return null;
     }
@@ -61,7 +58,12 @@ public class UserService {
 
     @Transactional
     public User 회원가입(JoinDto joinDto) {
-        return userRepository.save(joinDto.toEntity());
+        Rpg newRpg = new Rpg();
+        newRpg.setAttack(10);
+        newRpg.setHp(100);
+        newRpg.setMaxHp(100);
+        rpgRepository.save(newRpg);
+        return userRepository.save(joinDto.toEntity(newRpg));
     }
 
     public User 로그인(LoginDto loginDto) {

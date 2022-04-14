@@ -32,9 +32,9 @@ $("#nickname").blur(() => {
 });
 
 function check() {
-    if (valid.username.state && valid.password.state &&valid.nickname.state) {
+    if (valid.username.state && valid.password.state && valid.nickname.state) {
         return true;
-    }else{
+    } else {
         return false;
     }
 };
@@ -87,5 +87,6 @@ function passwordSameCheck() {
         valid.password.state = false;
         $("#password-error").show();
     }
-} 
+}
+
 

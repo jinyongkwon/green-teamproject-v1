@@ -3,6 +3,7 @@ package site.metacoding.greenrandomrpg.web.dto.user;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.metacoding.greenrandomrpg.domain.rpg.Rpg;
 import site.metacoding.greenrandomrpg.domain.user.User;
 
 @AllArgsConstructor
@@ -14,15 +15,14 @@ public class JoinDto {
     private String password;
     private String email;
 
-    public User toEntity() {
+    public User toEntity(Rpg rpg) {
         User user = new User();
         user.setUsername(this.username);
         user.setNickname(this.nickname);
         user.setPassword(this.password);
         user.setEmail(this.email);
         user.setCoin(0);
-        user.getRpg().setAttack(100);
-        user.getRpg().setMaxHp(200);
+        user.setRpg(rpg);
         return user;
     }
 

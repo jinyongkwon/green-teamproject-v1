@@ -10,12 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/common.css">
-    <style>
-        .header-right-height-half {
-            width: 100%;
-            height: 50%;
-        }
-    </style>
 </head>
 
 <body>
@@ -26,9 +20,15 @@
 
             {{#principal}}
             <input type="hidden" id="id" value="{{principal.id}}">
-            <div class="d-flex box-header-left">
+            <div class="d-flex box-size-wid60">
                 <div class="d-flex justify-content-center box-header-name ">
-                    <input type="text" class="header-font full" value="{{principal.username}}" readonly>
+                    <div class="box-size-wid40">
+                        <a href="/">
+                            <img class="full" src="/image/logo.png">
+                        </a>
+                    </div>
+                    <div class="box-size-wid60 ml-30"><input type="text" class="header-font full"
+                            value="{{principal.username}}" readonly></div>
                 </div>
                 {{#store}}
                 <div class="box-header-hp" id="user-box">
@@ -57,21 +57,22 @@
             </div>
             <!-- 오른쪽 -->
             {{#main}}
-            <div class="d-flex justify-content-end box-header-right">
+            <div class="d-flex justify-content-end box-size-wid40">
                 <button id="btn-chat" class="btn header-btn-font  header-btn">사람들과 대화하기</button>
                 <button id="btn-question" class="btn header-btn-font header-btn">질문게시판</button>
                 <button id="btn-logout" class="btn header-btn-font header-btn">로그아웃</button>
             </div>
             {{/main}}
             {{^main}}
-            <div class="box-header-right">
+            <div class="box-size-wid30">
                 <div class="d-flex header-right-height-half header-btn-font ">
                     <input type="text" class="header-btn-font text-right full" value="공격력 " readonly>
                     <input type="text" id="user-power" class="header-btn-font ml-30 full" value="&nbsp;350" readonly>
                 </div>
                 <div class="d-flex justify-content-center header-right-height-half header-btn-font mt-3">
-                    <input type="text"  class="header-btn-font text-right full" value="코인 " readonly>
-                    <input type="text" id="user-coin" class="header-btn-font ml-30 full" value="{{principal.coin}}" readonly>
+                    <input type="text" class="header-btn-font text-right full" value="코인 " readonly>
+                    <input type="text" id="user-coin" class="header-btn-font ml-30 full" value="{{principal.coin}}"
+                        readonly>
                 </div>
             </div>
             {{/main}}
@@ -89,5 +90,4 @@
             {{/principal}}
         </div>
         <!-- 헤더 끝 -->
-        
         <script src="/js/header.js"></script>
