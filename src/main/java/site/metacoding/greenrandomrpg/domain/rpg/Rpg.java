@@ -26,9 +26,6 @@ public class Rpg {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne(mappedBy = "rpg")
-    private User user;
-
     @Column(nullable = false)
     private Integer attack;
 
