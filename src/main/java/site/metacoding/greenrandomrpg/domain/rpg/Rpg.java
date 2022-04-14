@@ -15,7 +15,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import site.metacoding.greenrandomrpg.user.User1;
+import site.metacoding.greenrandomrpg.domain.user.User;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,6 +39,6 @@ public class Rpg {
 
     @JoinColumn(name = "userId")
     @OneToOne(fetch = FetchType.LAZY)
-    private User1 user;
+    private User user;
 
 }

@@ -1,4 +1,4 @@
-package site.metacoding.greenrandomrpg.user;
+package site.metacoding.greenrandomrpg.domain.user;
 
 import java.time.LocalDateTime;
 
@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-public class User1 {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,10 +42,10 @@ public class User1 {
 
     private Integer coin;
 
+    @Column(nullable = false)
     @CreatedDate
     private LocalDateTime createDate;
 
     @LastModifiedDate
     private LocalDateTime updateDate;
-
 }

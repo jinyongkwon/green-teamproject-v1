@@ -16,24 +16,30 @@
 <body>
     <div class="box-bg box-all">
         <div class="container box-form d-flex align-items-center">
-            <form action="#" method="post" onsubmit="return check()">
+            <form action="/join" method="post" onsubmit="return check()">
                 <div class="d-flex justify-content-center mb-3">
-                    <p class="main-font">학원등록절차</p>
+                    <a href="/">
+                        <p class="main-font">학원등록절차</p>
+                    </a>
                 </div>
                 <div class="mt-3 mb-3">
-                    <input type="text" class="form-control form-font" placeholder="아이디를 입력하세요" name="userId" required>
+                    <input id="username" type="text" class="form-control form-font" placeholder="아이디를 입력하세요"
+                        name="username" required>
                 </div>
+                <div id="username-error" class="error-font mt-3">이미 사용중인 아이디입니다!!</div>
                 <div class="mt-3 mb-3">
-                    <input type="text" class="form-control form-font" placeholder="닉네임을 입력하세요" name="nickname" required>
+                    <input id="nickname" type="text" class="form-control form-font" placeholder="닉네임을 입력하세요"
+                        name="nickname" required>
                 </div>
+                <div id="nickname-error" class="error-font mt-3">이미 사용중인 닉네임입니다!!</div>
                 <div class="row">
                     <div class="col">
-                        <input type="password" id="password1" class="form-control form-font" placeholder="비밀번호를 입력하세요"
-                            required>
+                        <input type="password" id="password" name="password" class="form-control form-font"
+                            placeholder="비밀번호를 입력하세요" required>
                     </div>
                     <div class="col">
-                        <input type="password" id="password2" class="form-control form-font" placeholder="비밀번호 재확인"
-                            name="password" required>
+                        <input type="password" id="same-password" class="form-control form-font" placeholder="비밀번호 재확인"
+                            required>
                     </div>
                     <div id="password-error" class="error-font mt-3">비밀번호가 다릅니다!!</div>
                     <div class="mt-3 mb-3">
