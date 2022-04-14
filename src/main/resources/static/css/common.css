@@ -44,12 +44,12 @@
     height: 100%;
 }
 
-.box-header-left {
+.box-size-wid70 {
     width: 70%;
     height: 100%;
 }
 
-.box-header-right {
+.box-size-wid30 {
     width: 30%;
     height: 100%;
 }
@@ -69,18 +69,18 @@
     width: 100%;
 }
 
-.box-footer-left{
+.box-size-wid60{
     width: 60%;
     height: 100%;
 }
 
-.box-footer-right{
+.box-size-wid40{
     width: 40%;
     height: 100%;
 }
 
 .box-footer-btn{
-    width: 20%;
+    width: 40%;
     height: 100%;
 }
 
@@ -116,6 +116,11 @@
     color: white;
     font-size: 15px;
     font-weight: 300;
+}
+
+.header-right-height-half {
+    width: 100%;
+    height: 50%;
 }
 
 .ml-30 {

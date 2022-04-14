@@ -1,4 +1,3 @@
-let regex = /[^0-9]/g; //숫자만 추출하기 위한 정규식.
 let hpText = $("#user-hptext").val().split("/");
 console.log(hpText);
 let User = {
@@ -15,18 +14,12 @@ let User = {
 }
 let isRecovery = false;
 
-
-function rand(min, max) { // 랜덤함수.
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
 $("#btn-recovery").click(() => {
     if (isRecovery == false) {
         isRecovery = true;
         recovery();
     }
 });
-
 
 let recovery = () => {
     let random = rand(1, 20)
@@ -65,4 +58,5 @@ let hpbarChange = () => {
     let hpPercent = User.nowHp / User.maxHp * 100;
     $("#user-header-hpbar").width(`${hpPercent}%`);
 }
+
 hpbarChange();

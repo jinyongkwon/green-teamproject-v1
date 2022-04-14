@@ -4,6 +4,7 @@ let jsp = 0 // html 갯수 초기화.
 let spring = 0 // html 갯수 초기화.
 let startStore = false; // 처음 시작할때만 사용하는 용도
 let isTimer = false;
+let isFree = false;
 
 $("#random-img").click(() => { // 일반뽑기
     if (startStore == false) {
@@ -16,11 +17,17 @@ $("#random-img").click(() => { // 일반뽑기
 });
 
 $("#present-img").click(() => { // 무료뽑기
+    if (startStore == false) {
+        startStore = true;
+        weaponNum();
+    }
     if (isTimer == false) {
         isTimer = true;
+        isFree = true;
         console.log("start : " + isTimer);
         draw();
         timer();
+        isFree = false;
     }
 });
 
@@ -32,7 +39,10 @@ let weaponNum = () => { // 무기 갯수 초기화
 }
 
 function draw() { // 뽑기
-    choose();
+    if (!isFree) {
+        choose();
+    }
+    console.log(isFree);
     let random = rand(0, 100);
     if (random >= 50 && random < 100 == true) {
         $("#random-txt").text("꽝 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
@@ -62,7 +72,6 @@ function draw() { // 뽑기
 let choose = () => { // 가격 100~1000
     let random = rand(100, 1000);
     let userCoin = parseInt(User.coin) - random;
-    console.log(random);
     User.coin = userCoin;
     $("#user-coin").val(userCoin);
 }
