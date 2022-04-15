@@ -25,7 +25,6 @@ async function update() {
     console.log(response)
 
 }
-<<<<<<< HEAD
 update();
 
 // 로그아웃
@@ -37,6 +36,5 @@ $("#btn-logout").click(()=>{
 async function logout(){
     fetch("/logout")
 }
-=======
-coinUpdate();
->>>>>>> 73fc80f8c78586a318913335e775c31fc286e9a2
+
+

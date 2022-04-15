@@ -175,7 +175,6 @@ public class UserController {
     @GetMapping("/find-pwd")
     public String findPwd() {
         return "findPwdForm";
-
     }
 
 }
