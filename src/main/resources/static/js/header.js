@@ -1,3 +1,7 @@
+let popupWidth = 900; // 팝업 크기
+let popupHeight = 500;
+let popupX = (window.screen.width / 2) - (popupWidth / 2); // 팝업 위치
+let popupY = (window.screen.height / 2) - (popupHeight / 2);
 let regex = /[^0-9]/g; //숫자만 추출하기 위한 정규식.
 
 function rand(min, max) { // 랜덤함수.
@@ -26,7 +30,7 @@ async function update() {
 }
 
 $("#btn-chat").click(() => {
-    window.open('/chat', '채팅', 'width=900,height=500,location=no,status=no,scrollbars=yes');
+    window.open('/chat', '채팅', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
 });
 
 update();
