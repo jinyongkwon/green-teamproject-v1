@@ -2,6 +2,7 @@ package site.metacoding.greenrandomrpg.service.user;
 
 import java.util.Optional;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,16 +11,38 @@ import site.metacoding.greenrandomrpg.domain.rpg.Rpg;
 import site.metacoding.greenrandomrpg.domain.rpg.RpgRepository;
 import site.metacoding.greenrandomrpg.domain.user.User;
 import site.metacoding.greenrandomrpg.domain.user.UserRepository;
+import site.metacoding.greenrandomrpg.util.email.EmailUtil;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
 import site.metacoding.greenrandomrpg.web.dto.user.LoginDto;
+import site.metacoding.greenrandomrpg.web.dto.user.PasswordResetReqDto;
 import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
 
 @RequiredArgsConstructor
 @Service
 public class UserService {
 
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final UserRepository userRepository;
     private final RpgRepository rpgRepository;
+    private final EmailUtil emailUtil;
+
+    @Transactional
+    public void 패스워드초기화(PasswordResetReqDto passwordResetReqDto) {
+        Optional<User> userOp = userRepository.findByUsernameAndEmail(passwordResetReqDto.getUsername(),
+                passwordResetReqDto.getEmail());
+
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+            String encPassword = bCryptPasswordEncoder.encode("0000");
+            userEntity.setPassword(encPassword);
+
+            emailUtil.sendEmail(userEntity.getEmail(), "비밀번호 새로 보내드립니다", "초기화된 비밀번호는 0000 입니다.");
+        } else {
+            // CustomException 만들어줘야 함.
+            System.out.println("실패했다.");
+        }
+
+    }
 
     @Transactional
     public User 업데이트(Integer id, UpdateDto UpdateDto) {

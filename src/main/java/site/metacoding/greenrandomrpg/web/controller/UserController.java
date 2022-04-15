@@ -1,4 +1,4 @@
-package site.metacoding.greenrandomrpg.web;
+package site.metacoding.greenrandomrpg.web.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
