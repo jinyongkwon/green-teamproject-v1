@@ -12,9 +12,9 @@ $("#btn-login").hover(() => {
 });
 
 $("#btn-find-id").click(() => {
-    window.open('/find-id', '아이디찾기', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location = no, status = no, scrollbars = yes');
+    window.open('/id-find-form', '아이디찾기', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location = no, status = no, scrollbars = yes');
 });
 
 $("#btn-find-pwd").click(() => {
-    window.open('/find-pwd', '비밀번호찾기', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
+    window.open('/password-find-form', '비밀번호찾기', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
 });
