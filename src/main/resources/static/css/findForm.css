@@ -15,41 +15,44 @@
 .main-font {
     font-family: 'nice';
     color: #08ecfc;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 900;
 }
 
 .form-font {
     font-family: 'nice';
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 300;
 }
 
 .error-font {
     font-family: 'nice';
     color: red;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
 }
 
 .btn-font {
     font-family: 'nice';
     color: #06ECfb;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 900;
 }
 
 .btn-font:hover {
     font-family: 'nice';
     color: #06ECfb;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 900;
 }
 
 span{
-    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
     font-family: 'nice';
     color: #06ECfb;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 900;
 }

@@ -164,4 +164,10 @@ public class UserController {
         return "findIdForm";
     }
 
+    // 비밀번호 찾기 페이지
+    @GetMapping("/find-pwd")
+    public String findPwd() {
+        return "findPwdForm";
+    }
+
 }
