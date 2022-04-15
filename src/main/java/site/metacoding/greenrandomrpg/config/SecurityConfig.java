@@ -24,7 +24,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable(); // 이거 안하면 Postman 테스트 못함
         http.authorizeRequests()
                 .antMatchers("/s/**").authenticated()
-                .anyRequest().permitAll();
+                .anyRequest().permitAll()
+                .and()
+                .formLogin()
+                .loginPage("/login-form")
+                .loginProcessingUrl("/login");
+
     }
 
 }
