@@ -26,3 +26,13 @@ async function update() {
 
 }
 update();
+
+// 로그아웃
+
+$("#btn-logout").click(()=>{
+    logout();
+})
+
+async function logout(){
+    fetch("/logout")
+}

@@ -158,4 +158,11 @@ public class UserController {
         return "battlePage";
     }
 
+    // 로그아웃
+    @GetMapping("/logout")
+    public String logout() {
+        session.invalidate();
+        return "redirect:/";
+    }
+
 }
