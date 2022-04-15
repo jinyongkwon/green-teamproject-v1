@@ -1,4 +1,4 @@
-package site.metacoding.greenrandomrpg.web;
+package site.metacoding.greenrandomrpg.web.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -156,6 +156,13 @@ public class UserController {
     @GetMapping("/s/battle")
     public String battle(Model model) {
         return "battlePage";
+    }
+
+    // 로그아웃
+    @GetMapping("/logout")
+    public String logout() {
+        session.invalidate();
+        return "redirect:/";
     }
 
     // 아이디 찾기 페이지
