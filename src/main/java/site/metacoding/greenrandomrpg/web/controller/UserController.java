@@ -158,11 +158,24 @@ public class UserController {
         return "battlePage";
     }
 
+<<<<<<< HEAD:src/main/java/site/metacoding/greenrandomrpg/web/controller/UserController.java
     // 로그아웃
     @GetMapping("/logout")
     public String logout() {
         session.invalidate();
         return "redirect:/";
+=======
+    // 아이디 찾기 페이지
+    @GetMapping("/find-id")
+    public String findId() {
+        return "findIdForm";
+    }
+
+    // 비밀번호 찾기 페이지
+    @GetMapping("/find-pwd")
+    public String findPwd() {
+        return "findPwdForm";
+>>>>>>> 73fc80f8c78586a318913335e775c31fc286e9a2:src/main/java/site/metacoding/greenrandomrpg/web/UserController.java
     }
 
 }

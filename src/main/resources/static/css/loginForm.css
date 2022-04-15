@@ -69,18 +69,22 @@
 
 .button-font {
     font-family: 'nice';
-    font-size: 50px;
+    font-size: 40px;
     color: #06ECfb;
     font-weight: 300;
 }
 
 .button-font:hover {
     font-family: 'nice';
-    font-size: 50px;
-    color: #06ECfb;
+    font-size: 40px;
+    color: #75d9d4;
     font-weight: 300;
 }
 
 .wid40 {
     width: 40%;
+}
+
+.wid20 {
+    width: 20%;
 }

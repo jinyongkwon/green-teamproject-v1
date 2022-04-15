@@ -2,6 +2,8 @@ package site.metacoding.greenrandomrpg.service.user;
 
 import java.util.Optional;
 
+import javax.management.RuntimeErrorException;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,8 +40,7 @@ public class UserService {
 
             emailUtil.sendEmail(userEntity.getEmail(), "비밀번호 새로 보내드립니다", "초기화된 비밀번호는 0000 입니다.");
         } else {
-            // CustomException 만들어줘야 함.
-            System.out.println("실패했다.");
+            throw new RuntimeException("이메일이 없는디?");
         }
 
     }
@@ -86,7 +87,11 @@ public class UserService {
         newRpg.setHp(100);
         newRpg.setMaxHp(100);
         rpgRepository.save(newRpg);
-        return userRepository.save(joinDto.toEntity(newRpg));
+        User user = joinDto.toEntity(newRpg);
+        String rawPassword = user.getPassword();
+        String encPassword = bCryptPasswordEncoder.encode(rawPassword);
+        user.setPassword(encPassword);
+        return userRepository.save(user);
     }
 
     public User 로그인(LoginDto loginDto) {
