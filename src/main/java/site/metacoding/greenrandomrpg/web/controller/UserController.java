@@ -20,6 +20,7 @@ import site.metacoding.greenrandomrpg.service.user.UserService;
 import site.metacoding.greenrandomrpg.web.dto.ResponseDto;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
 import site.metacoding.greenrandomrpg.web.dto.user.LoginDto;
+import site.metacoding.greenrandomrpg.web.dto.user.PasswordResetReqDto;
 import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
 
 @RequiredArgsConstructor
@@ -58,6 +59,17 @@ public class UserController {
             return new ResponseDto<>(1, "검사성공", isNotSame);
         } else {
             return new ResponseDto<>(1, "이미 사용중인 아이디입니다!!", isNotSame);
+        }
+    }
+
+    // 유저 이메일 중복검사
+    @GetMapping("/api/user/email-same-check")
+    public @ResponseBody ResponseDto<?> emailSameCheck(String email) {
+        boolean isNotSame = userService.유저이메일중복검사(email);
+        if (isNotSame) {
+            return new ResponseDto<>(1, "검사성공", isNotSame);
+        } else {
+            return new ResponseDto<>(1, "이미 사용중인 이메일 입니다!!", isNotSame);
         }
     }
 
@@ -167,15 +179,23 @@ public class UserController {
     }
 
     // 아이디 찾기 페이지
-    @GetMapping("/find-id")
+    @GetMapping("/id-find-form")
     public String findId() {
-        return "findIdForm";
+        return "idFindForm";
     }
 
     // 비밀번호 찾기 페이지
-    @GetMapping("/find-pwd")
-    public String findPwd() {
-        return "findPwdForm";
+    @GetMapping("/password-find-form")
+    public String passwordfindForm(Model model) {
+        return "passwordFindForm";
+    }
+
+    // 비밀번호 찾기 페이지
+    @PostMapping("/password-find")
+    public String passwordFind(PasswordResetReqDto passwordResetReqDto) {
+        userService.패스워드초기화(passwordResetReqDto);
+        return "redirect:/";
+
     }
 
 }

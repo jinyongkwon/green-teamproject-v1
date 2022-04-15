@@ -80,6 +80,17 @@ public class UserService {
         }
     }
 
+    public boolean 유저이메일중복검사(String email) {
+
+        User userEntity = userRepository.mEmailSameCheck(email);
+
+        if (userEntity == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Transactional
     public User 회원가입(JoinDto joinDto) {
         Rpg newRpg = new Rpg();
