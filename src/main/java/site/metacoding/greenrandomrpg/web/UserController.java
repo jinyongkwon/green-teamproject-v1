@@ -158,4 +158,16 @@ public class UserController {
         return "battlePage";
     }
 
+    // 아이디 찾기 페이지
+    @GetMapping("/find-id")
+    public String findId() {
+        return "findIdForm";
+    }
+
+    // 비밀번호 찾기 페이지
+    @GetMapping("/find-pwd")
+    public String findPwd() {
+        return "findPwdForm";
+    }
+
 }
