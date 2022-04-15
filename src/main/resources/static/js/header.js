@@ -9,8 +9,7 @@ async function update() {
     let updateDto = {
         coin: $("#user-coin").val(),
         hp: $("#user-hptext").val(),
-        attack : $("#user-power").val()
-
+        attack: $("#user-power").val()
     }
     console.log(update);
     let response = await fetch(`/user/${id}`, {
@@ -25,16 +24,19 @@ async function update() {
     console.log(response)
 
 }
+
+$("#btn-chat").click(() => {
+    window.open('/chat', '채팅', 'width=900,height=500,location=no,status=no,scrollbars=yes');
+});
+
 update();
 
 // 로그아웃
-
-$("#btn-logout").click(()=>{
+$("#btn-logout").click(() => {
     logout();
 })
 
-async function logout(){
+async function logout() {
     fetch("/logout")
 }
-
 

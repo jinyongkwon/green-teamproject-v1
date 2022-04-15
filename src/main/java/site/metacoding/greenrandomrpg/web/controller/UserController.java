@@ -198,4 +198,10 @@ public class UserController {
 
     }
 
+    // 채팅페이지
+    @GetMapping("/chat")
+    public String chat() {
+        return "chatPage";
+    }
+
 }

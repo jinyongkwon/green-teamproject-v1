@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 채팅연결을 위한 Js -->
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+
+<body>
+    <input type="hidden" id="user-name" value="{{principal.nickname}}">
+    <div class="box-all box-chat-bg" id="bg">
+        <div class="container d-flex flex-column">
+            <div class="box-chat-body mt-3">
+                <textarea class="chat-font" id="msgbox" cols="66" rows="19" readonly></textarea>
+            </div>
+            <div class="box-chat-bottom d-flex">
+                <div class="box-chat-msg">
+                    <input type="text" id="msg" class="form-control chat-font">
+                </div>
+                <div class="box-chat-btn ml-30">
+                    <button id="btn-send" class="btn btn-primary full chat-font">전송</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>
