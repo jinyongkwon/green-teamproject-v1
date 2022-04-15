@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import site.metacoding.greenrandomrpg.handler.LoginSuccessHandler;
+
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -28,8 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login-form")
-                .loginProcessingUrl("/login");
-
+                .loginProcessingUrl("/login")
+                .successHandler(new LoginSuccessHandler());
     }
-
 }

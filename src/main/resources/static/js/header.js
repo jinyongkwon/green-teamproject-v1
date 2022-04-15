@@ -6,7 +6,7 @@ function rand(min, max) { // 랜덤함수.
 
 async function update() {
     let id = $("#id").val();
-    let UpdateDto = {
+    let updateDto = {
         coin: $("#user-coin").val(),
         hp: $("#user-hptext").val(),
         attack : $("#user-power").val()

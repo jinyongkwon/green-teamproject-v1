@@ -38,6 +38,7 @@ public class UserController {
     // @PutMapping("/s/user/{id}")
     // public @ResponseBody ResponseDto<String> update(@PathVariable Integer id,
     // @RequestBody User user) {
+
     // User principal = (User) session.getAttribute("principal");
 
     // if (principal == null) {
