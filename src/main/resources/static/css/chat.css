@@ -1,0 +1,38 @@
+.box-chat-body{
+    width: 100%;
+    height: 80%;
+}
+
+.box-chat-bottom{
+    width: 100%;
+    height: 10%;
+}
+
+.box-chat-msg{
+    width: 90%;
+    height: 100%;
+}
+
+.box-chat-btn{
+    width: 10%;
+    height: 100%;
+}
+
+textarea {
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    resize: none;
+}
+
+.box-chat-bg{
+    background-image: url("/image/headerBg.png");
+    background-size: 100%;
+    background-position: center;
+}
+
+.chat-font{
+    font-family: 'nice';
+    font-size: 15px;
+    font-weight: 300;
+}

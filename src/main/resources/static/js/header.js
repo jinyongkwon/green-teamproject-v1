@@ -4,21 +4,39 @@ function rand(min, max) { // 랜덤함수.
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-async function coinUpdate() {
+async function update() {
     let id = $("#id").val();
-    let coinUpdateDto = {
-        coin: $("#user-coin").val()
+    let updateDto = {
+        coin: $("#user-coin").val(),
+        hp: $("#user-hptext").val(),
+        attack: $("#user-power").val()
     }
-    console.log(coinUpdate);
+    console.log(update);
     let response = await fetch(`/user/${id}`, {
         method: "PUT",
-        body: JSON.stringify(coinUpdateDto),
+        body: JSON.stringify(updateDto),
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         }
     });
 
     let responseParse = await response.json();
+    console.log(response)
 
 }
-coinUpdate();
+
+$("#btn-chat").click(() => {
+    window.open('/chat', '채팅', 'width=900,height=500,location=no,status=no,scrollbars=yes');
+});
+
+update();
+
+// 로그아웃
+$("#btn-logout").click(() => {
+    logout();
+})
+
+async function logout() {
+    fetch("/logout")
+}
+

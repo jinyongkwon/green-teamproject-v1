@@ -1,5 +1,5 @@
 let hpText = $("#user-hptext").val().split("/");
-console.log(hpText);
+
 let User = {
     name: $("#user-name").val(),
     power: $("#user-power").val(),
