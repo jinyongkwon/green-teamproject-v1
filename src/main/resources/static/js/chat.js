@@ -1,20 +1,19 @@
 let stompClient = null;
 
-$("#btn-send").click(() => { sendName(); });
+$("#btn-send").click(() => {
+    sendName();
+});
 
 $("#msg").keydown((event) => {
     if (event.keyCode == 13) {
         sendName();
-        $("#msg").val("");
     }
 });
 
 function connect() { // 서버 연결하고, 서버에서 메세지 전달받는 메서드.
     let socket = new SockJS('/gs-guide-websocket');
     stompClient = Stomp.over(socket);
-    console.log(stompClient);
     stompClient.connect({}, function (frame) {
-        console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/greetings', function (greeting) {
             showGreeting(JSON.parse(greeting.body).content);
         });
@@ -26,11 +25,11 @@ function disconnect() { // 서버 끊는 메서드.
         stompClient.disconnect();
     }
     setConnected(false);
-    console.log("Disconnected");
 }
 
 function sendName() { // 메세지를 서버로 보냄.
     stompClient.send("/app/hello", {}, JSON.stringify({ 'username': $("#user-name").val(), 'msg': $("#msg").val() }));
+    $("#msg").val("");
 }
 
 function showGreeting(message) { // 메세지 띄우는 메서드
