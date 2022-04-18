@@ -1,3 +1,7 @@
+let popupWidth = 900; // 팝업 크기
+let popupHeight = 500;
+let popupX = (window.screen.width / 2) - (popupWidth / 2); // 팝업 위치
+let popupY = (window.screen.height / 2) - (popupHeight / 2);
 let regex = /[^0-9]/g; //숫자만 추출하기 위한 정규식.
 
 function rand(min, max) { // 랜덤함수.
@@ -9,8 +13,7 @@ async function update() {
     let updateDto = {
         coin: $("#user-coin").val(),
         hp: $("#user-hptext").val(),
-        attack : $("#user-power").val()
-
+        attack: $("#user-power").val()
     }
     console.log(update);
     let response = await fetch(`/user/${id}`, {
@@ -25,16 +28,19 @@ async function update() {
     console.log(response)
 
 }
+
+$("#btn-chat").click(() => {
+    window.open('/chat', '채팅', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
+});
+
 update();
 
 // 로그아웃
-
-$("#btn-logout").click(()=>{
+$("#btn-logout").click(() => {
     logout();
 })
 
-async function logout(){
+async function logout() {
     fetch("/logout")
 }
-
 

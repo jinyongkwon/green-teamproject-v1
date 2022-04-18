@@ -6,6 +6,18 @@ server:
       charset: utf-8
 
 spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 아이디
+    password: 비밀번호
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
   mustache:
     expose-session-attributes: true
   datasource:
@@ -17,7 +29,7 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true

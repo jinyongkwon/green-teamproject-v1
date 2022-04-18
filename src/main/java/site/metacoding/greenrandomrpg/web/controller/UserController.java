@@ -195,7 +195,12 @@ public class UserController {
     public String passwordFind(PasswordResetReqDto passwordResetReqDto) {
         userService.패스워드초기화(passwordResetReqDto);
         return "redirect:/";
+    }
 
+    // 채팅페이지
+    @GetMapping("/chat")
+    public String chat() {
+        return "chatPage";
     }
 
 }
