@@ -1,12 +1,16 @@
 let stompClient = null;
 
 $("#btn-send").click(() => {
-    sendName();
+    if ($("#msg").val() != "") {
+        sendName();
+    }
 });
 
 $("#msg").keydown((event) => {
     if (event.keyCode == 13) {
-        sendName();
+        if ($("#msg").val() != "") {
+            sendName();
+        }
     }
 });
 
@@ -33,8 +37,10 @@ function sendName() { // 메세지를 서버로 보냄.
 }
 
 function showGreeting(message) { // 메세지 띄우는 메서드
-    $("#msgbox").append(` ${message} \n`);
-    $("#msgbox").scrollTop($("#msgbox").prop('scrollHeight'));
+    if (warningCount == 0) {
+        $("#msgbox").append(` ${message} \n`);
+        $("#msgbox").scrollTop($("#msgbox").prop('scrollHeight'));
+    }
 }
 
 connect();
