@@ -18,6 +18,7 @@ import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
 import site.metacoding.greenrandomrpg.web.dto.user.LoginDto;
 import site.metacoding.greenrandomrpg.web.dto.user.PasswordResetReqDto;
 import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
+import site.metacoding.greenrandomrpg.web.dto.user.UsernameRespDto;
 
 @RequiredArgsConstructor
 @Service
@@ -28,6 +29,7 @@ public class UserService {
     private final RpgRepository rpgRepository;
     private final EmailUtil emailUtil;
 
+    // 패스워드 초기화
     @Transactional
     public void 패스워드초기화(PasswordResetReqDto passwordResetReqDto) {
         Optional<User> userOp = userRepository.findByUsernameAndEmail(passwordResetReqDto.getUsername(),
@@ -42,7 +44,20 @@ public class UserService {
         } else {
             throw new RuntimeException("이메일이 없는디?");
         }
+    }
 
+    // 아이디 찾기
+    @Transactional
+    public void 아이디찾기(UsernameRespDto usernameRespDto) {
+        Optional<User> userOp = userRepository.findUsernameByEmail(usernameRespDto.getEmail());
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+            userEntity.getUsername();
+            userEntity.getEmail();
+            emailUtil.sendEmail(userEntity.getEmail(), "귀하의 아이디를 보냅니다", "귀하의 아이디는:" + userEntity.getUsername());
+        } else {
+            throw new RuntimeException("이메일을 보내는데 실패했습니다");
+        }
     }
 
     @Transactional
