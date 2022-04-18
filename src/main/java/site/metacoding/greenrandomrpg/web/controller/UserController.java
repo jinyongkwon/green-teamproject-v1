@@ -22,6 +22,7 @@ import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
 import site.metacoding.greenrandomrpg.web.dto.user.LoginDto;
 import site.metacoding.greenrandomrpg.web.dto.user.PasswordResetReqDto;
 import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
+import site.metacoding.greenrandomrpg.web.dto.user.UsernameRespDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -175,6 +176,7 @@ public class UserController {
     @GetMapping("/logout")
     public String logout() {
         session.invalidate();
+        System.out.println("로그아웃 잘 작동하고 있나 확인");
         return "redirect:/";
     }
 
@@ -184,18 +186,25 @@ public class UserController {
         return "idFindForm";
     }
 
+    // 아이디 찾기 데이터 보내기
+    @PostMapping("/id-find")
+    public String usernameFind(UsernameRespDto usernameRespDto) {
+        userService.아이디찾기(usernameRespDto);
+        System.out.println("아이디 찾기 작동중인지 controller에서 확인하기");
+        return "redirect:/";
+    }
+
     // 비밀번호 찾기 페이지
     @GetMapping("/password-find-form")
     public String passwordfindForm(Model model) {
         return "passwordFindForm";
     }
 
-    // 비밀번호 찾기 페이지
+    // 비밀번호 찾기 데이터 보내기
     @PostMapping("/password-find")
     public String passwordFind(PasswordResetReqDto passwordResetReqDto) {
         userService.패스워드초기화(passwordResetReqDto);
         return "redirect:/";
-
     }
 
     // 채팅페이지
