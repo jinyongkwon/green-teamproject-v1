@@ -30,7 +30,7 @@ async function update() {
 }
 
 $("#btn-chat").click(() => {
-    window.open('/chat', '채팅', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
+    window.open('/s/chat', '채팅', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
 });
 
 update();

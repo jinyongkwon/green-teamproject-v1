@@ -4,7 +4,7 @@ let User = {
     name: $("#user-name").val(),
     power: $("#user-power").val(),
     coin: $("#user-coin").val(),
-    nowHp: parseInt(hpText[0].replace(regex, '')),
+    nowHp: parseInt(hpText[0].replace(/[^0-9]/g, '')),
     maxHp: parseInt(hpText[1]),
     Skil: {
         name: "배치기",
@@ -20,6 +20,10 @@ $("#btn-recovery").click(() => {
         recovery();
     }
 });
+
+function rand(min, max) { // 랜덤함수.
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 let recovery = () => {
     let random = rand(1, 20)
