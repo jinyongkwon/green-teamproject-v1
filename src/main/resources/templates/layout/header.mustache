@@ -70,6 +70,13 @@
             {{/main}}
             {{^main}}
             <div class="box-size-wid30">
+                {{#ddong}}
+                <div class="d-flex header-right-height-half header-btn-font ">
+                    <input type="text" class="header-btn-font text-right full" value="점수" readonly>
+                    <input type="text" id="ddong-score" class="header-btn-font ml-30 full" value="0" readonly>
+                </div>
+                {{/ddong}}
+                {{^ddong}}
                 <div class="d-flex header-right-height-half header-btn-font ">
                     <input type="text" class="header-btn-font text-right full" value="공격력 " readonly>
                     <input type="text" id="user-power" class="header-btn-font ml-30 full"
@@ -80,6 +87,7 @@
                     <input type="text" id="user-coin" class="header-btn-font ml-30 full" value="{{principal.coin}}"
                         readonly>
                 </div>
+                {{/ddong}}
             </div>
             {{/main}}
             {{/principal}}
