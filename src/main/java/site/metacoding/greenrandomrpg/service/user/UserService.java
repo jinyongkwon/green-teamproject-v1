@@ -70,7 +70,7 @@ public class UserService {
             userEntity.setCoin(UpdateDto.getCoin());
             userEntity.getRpg().setAttack(UpdateDto.getAttack());
             userEntity.getRpg().setHp(UpdateDto.getHp());
-            userEntity.getRpg().setMaxHp(UpdateDto.getHp());
+            userEntity.getRpg().setMaxHp(UpdateDto.getMaxHp());
             userEntity.getRpg().setJava(UpdateDto.getJava());
             userEntity.getRpg().setHtml(UpdateDto.getHtml());
             userEntity.getRpg().setJsp(UpdateDto.getJsp());

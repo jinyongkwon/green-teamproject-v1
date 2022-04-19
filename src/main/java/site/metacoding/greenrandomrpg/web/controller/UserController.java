@@ -35,6 +35,7 @@ public class UserController {
     @PutMapping("/s/user/{id}")
     public @ResponseBody ResponseDto<?> update(@PathVariable Integer id, @RequestBody UpdateDto updateDto) {
 
+        System.out.println(updateDto);
         User principal = (User) session.getAttribute("principal");
         System.out.println("principal" + principal);
 
