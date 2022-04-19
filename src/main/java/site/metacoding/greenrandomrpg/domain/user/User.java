@@ -43,9 +43,10 @@ public class User {
     @Column(nullable = false, length = 30)
     private String email;
 
+    @Column(nullable = false)
     private Integer coin;
 
-    @OneToOne()
+    @OneToOne
     @JoinColumn(name = "rpgId")
     private Rpg rpg;
 

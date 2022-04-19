@@ -31,6 +31,22 @@ public class UserController {
     private final UserService userService;
     private final HttpSession session;
 
+    // 업데이트
+    @PutMapping("/s/user/{id}")
+    public @ResponseBody ResponseDto<?> update(@PathVariable Integer id, @RequestBody UpdateDto updateDto) {
+
+        User principal = (User) session.getAttribute("principal");
+        System.out.println("principal" + principal);
+
+        if (principal.getId() != id) {
+            throw new RuntimeException("동기화되지 않았다..");
+        }
+        User userUpdate = userService.업데이트(id, updateDto);
+        session.setAttribute("principal", userUpdate);
+        System.out.println("업데이트 잘됐나 확인*************" + userUpdate);
+        return new ResponseDto<>(1, "수정완료", null);
+    }
+
     // 수정 페이지 이동
     @GetMapping("/s/user/updateForm")
     public String updateForm() {
@@ -134,22 +150,6 @@ public class UserController {
     public String main(Model model) {
         model.addAttribute("main", true);
         return "main";
-    }
-
-    // 업데이트
-    @PutMapping("/user/{id}")
-    public @ResponseBody ResponseDto<?> update(@PathVariable Integer id, @RequestBody UpdateDto updateDto) {
-
-        User principal = (User) session.getAttribute("principal");
-        System.out.println("principal" + principal);
-
-        if (principal.getId() != id) {
-            throw new RuntimeException("동기화되지 않았다..");
-        }
-        User userUpdate = userService.업데이트(id, updateDto);
-        session.setAttribute("principal", userUpdate);
-        System.out.println("업데이트 잘됐나 확인*************" + userUpdate);
-        return new ResponseDto<>(1, "수정완료", null);
     }
 
     // 준비 페이지
