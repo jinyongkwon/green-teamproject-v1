@@ -280,3 +280,22 @@ $("#btn-run").click((event) => {
         location.href = "/s/ready"
     }, 2000)
 });
+
+async function update(){
+    let id = User.id;
+    console.log(id);
+    let updateDto = {
+        hp: User.nowHp,
+        maxHp: User.maxHp,
+        power: User.power
+    }
+
+    let response = await fetch(`/battle/update/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(updateDto),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      let responseParse = await response.json();
+    }
