@@ -33,4 +33,16 @@ public class Rpg {
     @Column(nullable = false)
     private Integer hp;
 
+    @Column(nullable = false)
+    private Integer html;
+
+    @Column(nullable = false)
+    private Integer java;
+
+    @Column(nullable = false)
+    private Integer jsp;
+
+    @Column(nullable = false)
+    private Integer spring;
+
 }

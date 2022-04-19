@@ -19,15 +19,12 @@ public class RpgService {
         return rstate;
     }
 
-    // @Transactional
-    // public Rpg 업데이트(Integer id, UpdateDto updateDto) {
-    // Optional<Rpg> rpgOp = rpgRepository.findById(id);
-    // if (rpgOp.isPresent()) {
-    // Rpg rpgEntity = rpgOp.get();
-    // rpgEntity.setHp(updateDto.getHp());
-    // return rpgEntity;
-    // }
-    // throw new RuntimeException("유저를 찾지 못함.");
-    // }
+    // userEntity.getRpg().setAttack(UpdateDto.getAttack());
+    // userEntity.getRpg().setHp(UpdateDto.getHp());
+    // userEntity.getRpg().setMaxHp(UpdateDto.getHp());
+    // userEntity.getRpg().setJava(UpdateDto.getJava());
+    // userEntity.getRpg().setHtml(UpdateDto.getHtml());
+    // userEntity.getRpg().setJsp(UpdateDto.getJsp());
+    // userEntity.getRpg().setSpring(UpdateDto.getSpring());
 
 }

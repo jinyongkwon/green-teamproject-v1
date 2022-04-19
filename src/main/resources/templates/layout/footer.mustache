@@ -1,11 +1,12 @@
 <div class="p-4 bg-primary box-header d-flex justify-content-between">
     <div class="box-size-wid60 d-flex justify-content-around">
+        <input type="hidden" id="id" value="{{principal.id}}">
         <div class="box-footer-btn">
             {{#store}}
-            <a href="/s/ready" class="btn footer-btn">준비</a>
+            <a href="/s/ready" id="btn-ready" class="btn footer-btn">준비</a>
             {{/store}}
             {{#ready}}
-            <a href="/s/store" class="btn footer-btn">상점</a>
+            <a href="/s/store" id="btn-shop" class="btn footer-btn">상점</a>
             {{/ready}}
         </div>
         <div class="box-footer-btn ">
@@ -15,26 +16,26 @@
     <div class="box-size-wid40 d-flex justify-content-around">
         <div class="box-footer-weapon">
             <img class="full" src="/image/html.png">
-            <div class="footer-weapon-text">
-                <p id="html">x15</p>
-            </div>
+            <div class="footer-weapon-text"> 
+                <p id="html">{{principal.rpg.html}}</p>
+            </div> 
         </div>
         <div class="box-footer-weapon">
             <img class="full" src="/image/java.png">
             <div class="footer-weapon-text" id="java">
-                <p id="java">x30</p>
+                <p id="java">{{principal.rpg.java}}</p>
             </div>
         </div>
         <div class="box-footer-weapon">
             <img class="full" src="/image/jsp.png">
             <div class="footer-weapon-text" id="jsp">
-                <p id="jsp">x1</p>
+                <p id="jsp">{{principal.rpg.jsp}}</p>
             </div>
         </div>
         <div class="box-footer-weapon">
             <img class="full" src="/image/spring.png">
             <div class="footer-weapon-text" id="spring">
-                <p id="spring">x5</p>
+                <p id="spring">{{principal.rpg.spring}}</p>
             </div>
         </div>
     </div>

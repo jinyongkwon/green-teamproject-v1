@@ -1,7 +1,8 @@
-let html = 0 // html 갯수 초기화.
-let java = 0 // html 갯수 초기화.
-let jsp = 0 // html 갯수 초기화.
-let spring = 0 // html 갯수 초기화.
+// let html = 0 // html 갯수 초기화.
+// let java = 0 // html 갯수 초기화.
+// let jsp = 0 // html 갯수 초기화.
+// let spring = 0 // html 갯수 초기화.
+
 let startStore = false; // 처음 시작할때만 사용하는 용도
 let isTimer = false;
 let isFree = false;

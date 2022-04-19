@@ -4,6 +4,8 @@ import java.util.Optional;
 
 import javax.management.RuntimeErrorException;
 
+import com.mysql.cj.x.protobuf.MysqlxCrud.Update;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -69,6 +71,10 @@ public class UserService {
             userEntity.getRpg().setAttack(UpdateDto.getAttack());
             userEntity.getRpg().setHp(UpdateDto.getHp());
             userEntity.getRpg().setMaxHp(UpdateDto.getHp());
+            userEntity.getRpg().setJava(UpdateDto.getJava());
+            userEntity.getRpg().setHtml(UpdateDto.getHtml());
+            userEntity.getRpg().setJsp(UpdateDto.getJsp());
+            userEntity.getRpg().setSpring(UpdateDto.getSpring());
             return userEntity;
         }
         return null;
@@ -112,6 +118,10 @@ public class UserService {
         newRpg.setAttack(10);
         newRpg.setHp(100);
         newRpg.setMaxHp(100);
+        newRpg.setHtml(1);
+        newRpg.setJava(0);
+        newRpg.setJsp(0);
+        newRpg.setSpring(0);
         rpgRepository.save(newRpg);
         User user = joinDto.toEntity(newRpg);
         String rawPassword = user.getPassword();
