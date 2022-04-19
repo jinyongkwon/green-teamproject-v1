@@ -44,6 +44,7 @@ function draw() { // 뽑기
         choose();
     }
     console.log(isFree);
+    let userPower = parseInt($("#user-power").val());
     let random = rand(0, 100);
     if (random >= 50 && random < 100 == true) {
         $("#random-txt").text("꽝 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
@@ -51,23 +52,24 @@ function draw() { // 뽑기
         html++
         $("#html").val(`x${html}`);
         $("#random-txt").text("html")
-        powerUp();
+        userPower += 1
     } else if (random >= 10 && random < 25 == true) {
         java++
         $("#java").val(`x${java}`);
         $("#random-txt").text("java")
-        powerUp();
+        userPower += 10
     } else if (random >= 2 && random < 10 == true) {
         jsp++
         $("#jsp").val(`x${jsp}`);
         $("#random-txt").text("jsp")
-        powerUp();
+        userPower += 30
     } else if (random >= 0 && random < 2 == true) {
         spring++
         $("#spring").val(`x${spring}`);
         $("#random-txt").text("spring bootㅊㅊㅊ")
-        powerUp();
+        userPower += 50
     }
+    $("#user-power").val(userPower);
 }
 
 let choose = () => { // 가격 100~1000
@@ -75,13 +77,6 @@ let choose = () => { // 가격 100~1000
     let userCoin = parseInt(User.coin) - random;
     User.coin = userCoin;
     $("#user-coin").val(userCoin);
-}
-
-let powerUp = () => { // 공격력 증가
-    let userPower = parseInt(User.power) + (html * 1) + (java * 10) + (jsp * 30) + (
-        spring * 50
-    );
-    $("#user-power").val(userPower);
 }
 
 let timer = () => { // 무료뽑기

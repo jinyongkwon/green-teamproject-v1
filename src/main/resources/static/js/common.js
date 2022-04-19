@@ -84,8 +84,14 @@ let updateUser = async () => {
     console.log(responseParse);
 }
 
+function sleep(ms) { // sleep시간만큼 while돌려서 대기효과를줌
+    const wakeUpTime = Date.now() + ms;
+    while (Date.now() < wakeUpTime) { }
+}
+
 window.onbeforeunload = () => {
     updateUser();
+    sleep(100);
 };
 
 let hpbarChange = () => {

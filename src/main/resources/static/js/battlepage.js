@@ -172,15 +172,16 @@ function hitText() { // 몬스터와 캐릭터가 한 행동을 text로 뛰워�
 
 let userWin = () => {
     let plushp = Math.floor(User.maxHp * 0.01 * rand(10, 30));
-    User.maxHp += plushp;
+    $("#user-hptext").val(`${User.nowHp}/${User.maxHp + plushp}`)
     $("#textbox").prepend(`${plushp}의 HP를 획득하셨습니다.\n`);
     let plusCoin = Math.floor(User.power * 0.1 * rand(10, 30));
-    User.coin += plusCoin;
+    $("#user-coin").val(`${parseInt(User.coin) + plusCoin}`)
     $("#textbox").prepend(`${plusCoin}의 코인을 획득하셨습니다.\n`);
 }
 
 let userLose = () => {
-    User.nowHp = User.maxHp / 100 * 5;
+    User.nowHp = Math.floor(User.maxHp / 100 * 5);
+    $("#user-hptext").val(`${User.nowHp}/${User.maxHp}`)
     $("#textbox").prepend(`전체체력의 5%의 체력을 가지고 부활합니다.\n`);
 }
 
@@ -280,22 +281,3 @@ $("#btn-run").click((event) => {
         location.href = "/s/ready"
     }, 2000)
 });
-
-async function update(){
-    let id = User.id;
-    console.log(id);
-    let updateDto = {
-        hp: User.nowHp,
-        maxHp: User.maxHp,
-        power: User.power
-    }
-
-    let response = await fetch(`/battle/update/${id}`, {
-        method: "PUT",
-        body: JSON.stringify(updateDto),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      let responseParse = await response.json();
-    }

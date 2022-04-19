@@ -8,8 +8,9 @@
     src: url('/font/HSGyeoulNoonkott2.0-Regular.ttf') format('truetype');
 }
 
-.box-all{
+.box-all {
     height: 100vh;
+    overflow: hidden;
 }
 
 .header-font {
@@ -64,32 +65,32 @@
     width: 100%;
 }
 
-.box-body{
+.box-body {
     height: 70%;
     width: 100%;
 }
 
-.box-size-wid60{
+.box-size-wid60 {
     width: 60%;
     height: 100%;
 }
 
-.box-size-wid40{
+.box-size-wid40 {
     width: 40%;
     height: 100%;
 }
 
-.box-footer-btn{
+.box-footer-btn {
     width: 40%;
     height: 100%;
 }
 
-.box-footer-weapon{
+.box-footer-weapon {
     width: 10%;
     height: 100%;
 }
 
-.footer-btn{
+.footer-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,14 +103,14 @@
     height: 100%;
 }
 
-.footer-btn:hover{
+.footer-btn:hover {
     font-family: 'nice';
     color: #75d9d4;
     font-size: 40px;
     font-weight: 600;
 }
 
-.footer-weapon-text{
+.footer-weapon-text {
     display: flex;
     justify-content: center;
     font-family: 'nice';
@@ -138,13 +139,13 @@ input {
 }
 
 input:focus {
-    outline:none;
+    outline: none;
 }
 
 .text-right {
     text-align: right;
 }
 
-a{
+a {
     text-decoration: none;
 }

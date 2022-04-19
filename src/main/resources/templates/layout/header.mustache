@@ -20,9 +20,9 @@
 
             {{#principal}}
             <input type="hidden" id="id" value="{{principal.id}}">
-            <div class="d-flex box-size-wid60">
-                <div class="d-flex justify-content-center box-header-name ">
-                    <div class="box-size-wid40">
+            <div class="d-flex box-size-wid70">
+                <div class="d-flex justify-content-center box-header-name box-size-wid60">
+                    <div class="box-size-wid30">
                         <a href="/">
                             <img class="full" src="/image/logo.png">
                         </a>
@@ -33,29 +33,34 @@
                     </div>
                 </div>
                 {{#store}}
-                <div class="box-header-hp" id="user-box">
-                    <div class="p-2 bg-danger full" id="user-header-hpbar">
-                    </div>
-                    <div>
-                        <input type="text" id="user-hptext" class="header-btn-font full"
-                            value="{{principal.rpg.hp}}/{{principal.rpg.maxHp}}" readonly>
+                <div class="box-size-wid60">
+                    <div class="box-header-hp full" id="user-box">
+                        <div class="p-2 bg-danger full" id="user-header-hpbar">
+                        </div>
+                        <div>
+                            <input type="text" id="user-hptext" class="header-btn-font full"
+                                value="{{principal.rpg.hp}}/{{principal.rpg.maxHp}}" readonly>
+                        </div>
                     </div>
                 </div>
                 {{/store}}
                 {{#ready}}
-                <div class="box-header-hp" id="user-box">
-                    <div class="p-2 bg-danger full" id="user-header-hpbar">
-                    </div>
-                    <div>
-                        <input type="text" id="user-hptext" class="header-btn-font full"
-                            value="{{principal.rpg.hp}}/{{principal.rpg.maxHp}}" readonly>
+                <div class="box-size-wid60">
+                    <div class="box-header-hp full" id="user-box">
+                        <div class="p-2 bg-danger full" id="user-header-hpbar">
+                        </div>
+                        <div>
+                            <input type="text" id="user-hptext" class="header-btn-font full"
+                                value="{{principal.rpg.hp}}/{{principal.rpg.maxHp}}" readonly>
+                        </div>
                     </div>
                 </div>
                 {{/ready}}
                 {{#main}}
-                <div class="d-flex justify-content-center box-header-coin header-font">
-                    <input type="text" class="header-font text-right full" value="코인 : " readonly>
-                    <input type="text" id="user-coin" class="header-font full" value="{{principal.coin}}" readonly>
+                <div class="d-flex justify-content-center box-header-coin header-font box-size-wid40">
+                    <input type="text" class="header-font text-right box-size-wid40" value="코인 : " readonly>
+                    <input type="text" id="user-coin" class="header-font box-size-wid60" value="{{principal.coin}}"
+                        readonly>
                 </div>
                 {{/main}}
             </div>
