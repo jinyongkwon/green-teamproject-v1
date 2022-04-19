@@ -1,10 +1,9 @@
 {{>/layout/header}}
-<div class="box-body">
-
-    <body onload="loaded()" onkeydown="keydown()" onkeyup="keyup()" onkeypress="keypress()">
-        <canvas width="700" height="500"
-            style="border: 2px solid black;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"
-            id="c1"></canvas>
-        <script src="/js/ReadybattleTest.js"></script>
+<div>
+<div id="bg"></div>
+<div><button id="save-battle">세이브앤드고!</button></div>
+<script src="/js/hero.js"></script>
+<script src="/js/enemy.js"></script>
+<script src="/js/init.js"></script>
 </div>
 {{>/layout/footer}}
