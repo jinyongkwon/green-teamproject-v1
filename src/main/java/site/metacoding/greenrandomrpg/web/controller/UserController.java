@@ -208,9 +208,16 @@ public class UserController {
     }
 
     // 채팅페이지
-    @GetMapping("/chat")
+    @GetMapping("/s/chat")
     public String chat() {
         return "chatPage";
+    }
+
+    // 똥피하기페이지
+    @GetMapping("/s/ddong")
+    public String ddong(Model model) {
+        model.addAttribute("ddong", true);
+        return "ddong";
     }
 
 }
