@@ -20,8 +20,14 @@
     <div class="box_bg box-all" id="bg">
         <!-- top 시작 -->
         <div class="container-fluid box_top">
+            <input type="hidden" value="{{principal.id}}" id="id">
+            <input type="hidden" value="{{principal.coin}}" id="user-coin">
+            <input type="hidden" value="{{principal.rpg.html}}" id="html">
+            <input type="hidden" value="{{principal.rpg.java}}" id="java">
+            <input type="hidden" value="{{principal.rpg.jsp}}" id="jsp">
+            <input type="hidden" value="{{principal.rpg.spring}}" id="spring">
             <input type="hidden" value="{{principal.rpg.attack}}" id="user-power">
-            <input type="hidden" value="10000" id="monster-power">
+            <input type="hidden" value="8" id="monster-power">
             <!-- hp바 시작 -->
             <div class="box_top_top pt-3">
                 <div class="d-flex mb-3">
@@ -42,13 +48,13 @@
                 <div class="d-flex justify-content-between mb-3">
                     <div class="mb-3 d-flex flex-column">
                         <div class="mb-3">
-                            <input type="text" class="text-font" value="{{principal.rpg.hp}}" id="user-hptext" readonly>
+                            <input type="text" class="text-font" value="{{principal.rpg.hp}}/{{principal.rpg.maxHp}}"
+                                id="user-hptext" readonly>
                             <input type="text" class="text-font" value="{{principal.nickname}}" id="user-name" readonly>
                         </div>
                     </div>
                     <div class="mb-3 d-flex flex-column">
-                        <input type="text" value="10000/10000" class="text-right text-font" id="monster-hptext"
-                            readonly>
+                        <input type="text" value="100/100" class="text-right text-font" id="monster-hptext" readonly>
                         <input type="text" class="text-right text-font" id="monster-name" value="최주호" readonly>
                         <input type="text" class="text-right text-font" value="가나다라마바사" readonly>
                     </div>
@@ -98,8 +104,8 @@
     </div>
 
     <!-- 전체화면 끝 -->
-    <script src="/js/common.js"></script>
     <script src="/js/battlepage.js"></script>
+    <script src="/js/common.js"></script>
 </body>
 
 </html>

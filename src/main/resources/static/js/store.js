@@ -33,10 +33,10 @@ $("#present-img").click(() => { // 무료뽑기
 });
 
 let weaponNum = () => { // 무기 갯수 초기화
-    html = parseInt($("#html").text().replace(regex, ''));
-    java = parseInt($("#java").text().replace(regex, ''));
-    jsp = parseInt($("#jsp").text().replace(regex, ''));
-    spring = parseInt($("#spring").text().replace(regex, ''));
+    html = parseInt($("#html").val().replace(regex, ''));
+    java = parseInt($("#java").val().replace(regex, ''));
+    jsp = parseInt($("#jsp").val().replace(regex, ''));
+    spring = parseInt($("#spring").val().replace(regex, ''));
 }
 
 function draw() { // 뽑기
@@ -49,22 +49,22 @@ function draw() { // 뽑기
         $("#random-txt").text("꽝 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ")
     } else if (random >= 25 && random < 50 == true) {
         html++
-        $("#html").text(`x${html}`);
+        $("#html").val(`x${html}`);
         $("#random-txt").text("html")
         powerUp();
     } else if (random >= 10 && random < 25 == true) {
         java++
-        $("#java").text(`x${java}`);
+        $("#java").val(`x${java}`);
         $("#random-txt").text("java")
         powerUp();
     } else if (random >= 2 && random < 10 == true) {
         jsp++
-        $("#jsp").text(`x${jsp}`);
+        $("#jsp").val(`x${jsp}`);
         $("#random-txt").text("jsp")
         powerUp();
     } else if (random >= 0 && random < 2 == true) {
         spring++
-        $("#spring").text(`x${spring}`);
+        $("#spring").val(`x${spring}`);
         $("#random-txt").text("spring bootㅊㅊㅊ")
         powerUp();
     }

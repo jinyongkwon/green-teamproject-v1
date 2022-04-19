@@ -38,11 +38,11 @@ let recovery = () => {
                 duration: 1000,
                 step: function () { // 현재 hp부터 순차적으로 증가.
                     let num = Math.floor(this.val);
-                    $("#user-hptext").val(`체력 ${num}/${User.maxHp}`);
+                    $("#user-hptext").val(`${num}/${User.maxHp}`);
                 },
                 complete: function () { // 끝난숫자 넣기.
                     let num = Math.floor(this.val);
-                    $("#user-hptext").val(`체력 ${num}/${User.maxHp}`);
+                    $("#user-hptext").val(`${num}/${User.maxHp}`);
                     User.nowHp = num;
                     isRecovery = false;
                 }
@@ -57,6 +57,36 @@ let recovery = () => {
         }
     }
 }
+
+
+let updateUser = async () => {
+    let hpText = $("#user-hptext").val().split("/");
+    let id = $("#id").val();
+    let updateDto = {
+        coin: parseInt($("#user-coin").val()),
+        attack: parseInt($("#user-power").val()),
+        maxHp: parseInt(hpText[1]),
+        hp: parseInt(hpText[0]),
+        html: parseInt($("#html").val().replace(/[^0-9]/g, '')),
+        java: parseInt($("#java").val().replace(/[^0-9]/g, '')),
+        jsp: parseInt($("#jsp").val().replace(/[^0-9]/g, '')),
+        spring: parseInt($("#spring").val().replace(/[^0-9]/g, ''))
+    };
+    console.log(updateDto);
+    let response = await fetch(`/s/user/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(updateDto),
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        }
+    });
+    let responseParse = await response.json();
+    console.log(responseParse);
+}
+
+window.onbeforeunload = () => {
+    updateUser();
+};
 
 let hpbarChange = () => {
     let hpPercent = User.nowHp / User.maxHp * 100;

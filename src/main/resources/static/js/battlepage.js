@@ -277,6 +277,6 @@ $("#btn-skil").click((event) => {
 $("#btn-run").click((event) => {
     $("#textbox").prepend(`나는 찔찔합니다 2초후에 울면서 도망갑니다.\n`);
     setTimeout(() => {
-        location.href = "/ready"
+        location.href = "/s/ready"
     }, 2000)
 });
