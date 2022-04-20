@@ -47,7 +47,7 @@ let recovery = () => {
                     isRecovery = false;
                 }
             });
-            $("#user-header-hpbar").animate({ width: "100%" }, 1000); // hpbar 천천히증가
+            $("#user-hpbar").animate({ width: "100%" }, 1000); // hpbar 천천히증가
         } else {
             $("#user-hptext").val("회복할 돈이 모자라다!!!");
             setTimeout(() => {
@@ -96,7 +96,8 @@ window.onbeforeunload = () => {
 
 let hpbarChange = () => {
     let hpPercent = User.nowHp / User.maxHp * 100;
-    $("#user-header-hpbar").width(`${hpPercent}%`);
+    console.log(hpPercent);
+    $("#user-hpbar").width(`${hpPercent - 2}%`);
 }
 
 hpbarChange();

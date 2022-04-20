@@ -1,7 +1,6 @@
-
 .flex {
     display: flex;
-  justify-content: center;
+    justify-content: center;
 }
 
 .box_bg {
@@ -92,7 +91,11 @@
     top: 0%;
 }
 
-
+textarea {
+    border: none;
+    resize: none;
+    background: transparent;
+}
 
 input {
     width: 100%;
