@@ -1,0 +1,63 @@
+.bg-flex {
+  display: flex;
+  justify-content: center;
+}
+
+#bg {
+  background-image: url("/image/bg.png");
+  background-size: contain;
+  width: 800px;
+  height: 600px;
+  position: relative;
+  min-width: 800px;
+}
+.heroFront,
+.heroRight,
+.heroBack,
+.heroLeft {
+  background-image: url("/image/hero.png");
+  height: 54px;
+  width: 35px;
+  position: absolute;
+  bottom: 600px;
+}
+.heroFront {
+  background-position-x: 3px;
+}
+.heroRight {
+  background-position-x: -59px;
+}
+
+.heroLeft {
+  background-position-x: -87px;
+}
+.heroBack {
+  background-position-x: -28px;
+}
+
+.enemy,
+.enemyDie {
+  background-image: url("/image/enemy.png");
+  width: 45px;
+  height: 54px;
+  position: absolute;  
+}
+
+.enemy {
+  background-position-x: 0;
+}
+.enemyDie {
+  background-position-x: -45px;
+}
+.enemyGone {
+  display: none;
+}
+
+.message {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font: bold;
+  font-size: 30px;
+  color: white;
+}
