@@ -185,7 +185,7 @@ function makeEnemy() {
   if (enemyList.length< 10){
     if (enemyGauge >180){
     let checkVal = Math.round(Math.random()*100);
-    console.log(" 이거는"+ checkVal);
+    //console.log(" 이거는"+ checkVal);
     if(checkVal>87){
       
       enemy = {};
