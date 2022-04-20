@@ -1,6 +1,5 @@
-const bg = document.querySelector("#bg");
-const message = document.createElement("div");
-message.className = "message";
+const bgfield = document.querySelector("#bgfield");
+
 let agressPoint =0;
 
 let heroX = 350;
@@ -20,7 +19,7 @@ let right = false;
 let left = false;
 let up = false;
 let down = false;
-const movingGap = 9;
+const movingGap = 19;
 
 //let encounterSound = new Audio(`wow.mp3`);
 
@@ -83,7 +82,7 @@ $.ajax({
 */
 function moveRight() {
   if (right) {
-    if (heroX < 765) {
+    if (heroX < 1255) {
       heroX += movingGap;
       enemyGauge+= movingGap;
       console.log(enemyGauge);      
@@ -107,7 +106,7 @@ function moveLeft() {
 
 function moveDown() {
   if (down) {
-    if (heroY < 546) {
+    if (heroY < 652) {
       heroY += movingGap;
       enemyGauge+= movingGap;
       console.log(enemyGauge);
@@ -160,10 +159,10 @@ function handleKeyup(e) {
 }
 
 function randomiseX() {
-  return Math.floor(Math.random() * 755);
+  return Math.floor(Math.random() * 1255);
 }
 function randomiseY() {
-  return Math.floor(Math.random() * 536);
+  return Math.floor(Math.random() * 652);
 }
 
 function makeEnemyList() {
@@ -183,10 +182,10 @@ function makeEnemyList() {
 
 function makeEnemy() {
   if (enemyList.length< 10){
-    if (enemyGauge >180){
+    if (enemyGauge >230){
     let checkVal = Math.round(Math.random()*100);
     //console.log(" 이거는"+ checkVal);
-    if(checkVal>87){
+    if(checkVal>89){
       
       enemy = {};
     enemy["EnemyImg"] = new Enemy();

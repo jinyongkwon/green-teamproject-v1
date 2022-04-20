@@ -1,7 +1,7 @@
 class Hero {
   constructor() {
     this.hero = document.createElement("div");
-    bg.appendChild(this.hero);
+    bgfield.appendChild(this.hero);
   }
   createHero(x,y) {
     this.hero.style.left = `${x}px`;
