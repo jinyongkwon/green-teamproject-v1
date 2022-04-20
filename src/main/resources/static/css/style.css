@@ -3,14 +3,13 @@
   justify-content: center;
 }
 
-#bg {
+.bg {
   background-image: url("/image/bg.png");
-  background-size: contain;
-  width: 800px;
-  height: 600px;
+  background-position: center;
+  background-size: 100%;
   position: relative;
-  min-width: 800px;
 }
+
 .heroFront,
 .heroRight,
 .heroBack,
@@ -21,9 +20,11 @@
   position: absolute;
   bottom: 600px;
 }
+
 .heroFront {
   background-position-x: 3px;
 }
+
 .heroRight {
   background-position-x: -59px;
 }
@@ -31,6 +32,7 @@
 .heroLeft {
   background-position-x: -87px;
 }
+
 .heroBack {
   background-position-x: -28px;
 }
@@ -40,15 +42,17 @@
   background-image: url("/image/enemy.png");
   width: 45px;
   height: 54px;
-  position: absolute;  
+  position: absolute;
 }
 
 .enemy {
   background-position-x: 0;
 }
+
 .enemyDie {
   background-position-x: -45px;
 }
+
 .enemyGone {
   display: none;
 }
