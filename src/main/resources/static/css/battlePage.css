@@ -1,4 +1,8 @@
 
+.flex {
+    display: flex;
+  justify-content: center;
+}
 
 .box_bg {
     background-image: url("/image/battleBG.png");
@@ -88,11 +92,7 @@
     top: 0%;
 }
 
-textarea {
-    border: none;
-    resize: none;
-    background: transparent;
-}
+
 
 input {
     width: 100%;
