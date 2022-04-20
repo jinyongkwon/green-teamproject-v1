@@ -1,6 +1,5 @@
-const bg = document.querySelector("#bg");
-const message = document.createElement("div");
-message.className = "message";
+const bgfield = document.querySelector("#bgfield");
+
 let agressPoint =0;
 
 let heroX = 350;

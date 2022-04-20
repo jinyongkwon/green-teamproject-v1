@@ -4,7 +4,7 @@ class Enemy {
   }
 
   createEnemy(x, y) {
-    bg.appendChild(this.enemy);
+    bgfield.appendChild(this.enemy);
     this.enemy.className = "enemy";
     this.enemy.style.left = `${x}px`;
     this.enemy.style.top = `${y}px`;
