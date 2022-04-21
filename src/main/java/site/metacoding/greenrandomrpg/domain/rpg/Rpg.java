@@ -1,5 +1,8 @@
 package site.metacoding.greenrandomrpg.domain.rpg;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -45,4 +48,14 @@ public class Rpg {
     @Column(nullable = false)
     private Integer spring;
 
+    @Column(nullable = true)
+    private LocalDateTime freeTime;
+
+    public Timestamp getFormatFreeTime() {
+        Timestamp time = new Timestamp(0);
+        if (freeTime != null) {
+            time = Timestamp.valueOf(freeTime); // getTime을 쓰기위해 TimeStamp타입으로 변환
+        }
+        return time;
+    }
 }

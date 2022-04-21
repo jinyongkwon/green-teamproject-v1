@@ -1,10 +1,8 @@
 package site.metacoding.greenrandomrpg.service.user;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Optional;
-
-import javax.management.RuntimeErrorException;
-
-import com.mysql.cj.x.protobuf.MysqlxCrud.Update;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,7 +15,6 @@ import site.metacoding.greenrandomrpg.domain.user.User;
 import site.metacoding.greenrandomrpg.domain.user.UserRepository;
 import site.metacoding.greenrandomrpg.util.email.EmailUtil;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
-import site.metacoding.greenrandomrpg.web.dto.user.LoginDto;
 import site.metacoding.greenrandomrpg.web.dto.user.PasswordResetReqDto;
 import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
 import site.metacoding.greenrandomrpg.web.dto.user.UsernameRespDto;
@@ -30,6 +27,28 @@ public class UserService {
     private final UserRepository userRepository;
     private final RpgRepository rpgRepository;
     private final EmailUtil emailUtil;
+
+    public Timestamp 무료뽑기시간확인(Integer userId) {
+        Optional<User> userOp = userRepository.findById(userId);
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+            return userEntity.getRpg().getFormatFreeTime();
+        } else {
+            throw new RuntimeException("없는 아이디!!!");
+        }
+    }
+
+    @Transactional
+    public Timestamp 무료뽑기시간저장(LocalDateTime now, Integer userId) {
+        Optional<User> userOp = userRepository.findById(userId);
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+            userEntity.getRpg().setFreeTime(now);
+            return userEntity.getRpg().getFormatFreeTime();
+        } else {
+            throw new RuntimeException("없는 아이디!!!");
+        }
+    }
 
     // 패스워드 초기화
     @Transactional
@@ -118,7 +137,7 @@ public class UserService {
         newRpg.setAttack(10);
         newRpg.setHp(100);
         newRpg.setMaxHp(100);
-        newRpg.setHtml(1);
+        newRpg.setHtml(0);
         newRpg.setJava(0);
         newRpg.setJsp(0);
         newRpg.setSpring(0);
@@ -128,13 +147,6 @@ public class UserService {
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setPassword(encPassword);
         return userRepository.save(user);
-    }
-
-    public User 로그인(LoginDto loginDto) {
-        System.out.println(loginDto);
-        User userEntity = userRepository.mLogin(loginDto.getUsername(), loginDto.getPassword());
-        System.out.println("로그인:" + userEntity);
-        return userEntity;
     }
 
     // public User 유저수정(Integer id, User user) {
