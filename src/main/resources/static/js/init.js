@@ -2,10 +2,10 @@ const bgfield = document.querySelector("#bgfield");
 
 let agressPoint =0;
 
-let heroX = 350;
+let heroX = 50;
 const heroWidth = 40;
 const heroHeight = 55;
-let heroY = 351;
+let heroY = 50;
 
 let enemyGauge =0;
 
@@ -106,7 +106,8 @@ function moveLeft() {
 
 function moveDown() {
   if (down) {
-    if (heroY < 652) {
+    if (heroY < bgfield.clientHeight*0.895) {
+      console.log("clientwidth"+bgfield.clientHeight);
       heroY += movingGap;
       enemyGauge+= movingGap;
       console.log(enemyGauge);
@@ -162,7 +163,7 @@ function randomiseX() {
   return Math.floor(Math.random() * 1255);
 }
 function randomiseY() {
-  return Math.floor(Math.random() * 652);
+  return Math.floor(Math.random() * 612);
 }
 
 function makeEnemyList() {
