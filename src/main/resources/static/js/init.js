@@ -222,7 +222,6 @@ function encounter() {
               heroY + heroHeight >= enemy.y +pad
           ) {
           enemy.status = false;
-          
           enemy.EnemyImg.killEnemy();
           setTimeout(detectEncounter, 2000);
  
