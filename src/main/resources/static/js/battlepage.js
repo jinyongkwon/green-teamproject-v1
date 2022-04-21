@@ -47,7 +47,7 @@ function demageHp() { // hpbar가 hp에 비례해서 깎임.
             $("#user-hpbar").animate({
                 width: `-=${skilUseDemage}%`
             }, 900);
-            let demage = User.Skil.demage / User.maxHp * 100
+            let demage = User.Skil.demage / monsterMaxHp() * 100
             console.log(demage);
             $("#monster-hpbar").animate({
                 width: `-=${demage}%`

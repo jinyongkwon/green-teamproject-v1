@@ -1,14 +1,26 @@
 package site.metacoding.greenrandomrpg.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import lombok.RequiredArgsConstructor;
+import site.metacoding.greenrandomrpg.config.auth.LoginUser;
+import site.metacoding.greenrandomrpg.domain.monster.Monster;
+import site.metacoding.greenrandomrpg.domain.user.User;
+import site.metacoding.greenrandomrpg.service.monster.MonsterService;
+
+@RequiredArgsConstructor
 @Controller
 public class PageController {
+
+    private final MonsterService monsterService;
 
     // 수정 페이지 이동
     @GetMapping("/s/user/updateForm")
@@ -61,7 +73,9 @@ public class PageController {
 
     // 전투 페이지
     @GetMapping("/s/battle")
-    public String battle(Model model) {
+    public String battle(Model model, @AuthenticationPrincipal LoginUser loginUser) {
+        Monster monster = monsterService.몬스터불러오기(loginUser.getUser().getId());
+        model.addAttribute("monster", monster);
         return "battlePage";
     }
 

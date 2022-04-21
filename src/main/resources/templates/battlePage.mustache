@@ -27,7 +27,7 @@
             <input type="hidden" value="{{principal.rpg.jsp}}" id="jsp">
             <input type="hidden" value="{{principal.rpg.spring}}" id="spring">
             <input type="hidden" value="{{principal.rpg.attack}}" id="user-power">
-            <input type="hidden" value="100" id="monster-power">
+            <input type="hidden" value="{{monster.attack}}" id="monster-power">
             <!-- hp바 시작 -->
             <div class="box_top_top pt-3">
                 <div class="d-flex mb-3">
@@ -51,12 +51,15 @@
                             <input type="text" class="text-font" value="{{principal.rpg.hp}}/{{principal.rpg.maxHp}}"
                                 id="user-hptext" readonly>
                             <input type="text" class="text-font" value="{{principal.nickname}}" id="user-name" readonly>
+                            <input type="text" class="text-font" value="공격력 : {{principal.rpg.attack}}" readonly>
                         </div>
                     </div>
                     <div class="mb-3 d-flex flex-column">
-                        <input type="text" value="100/100" class="text-right text-font" id="monster-hptext" readonly>
-                        <input type="text" class="text-right text-font" id="monster-name" value="최주호" readonly>
-                        <input type="text" class="text-right text-font" value="가나다라마바사" readonly>
+                        <input type="text" value="{{monster.hp}}/{{monster.maxHp}}" class="text-right text-font"
+                            id="monster-hptext" readonly>
+                        <input type="text" class="text-right text-font" id="monster-name" value="{{monster.name}}"
+                            readonly>
+                        <input type="text" class="text-right text-font" value="공격력 : {{monster.attack}}" readonly>
                     </div>
                 </div>
             </div>

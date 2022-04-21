@@ -1,5 +1,6 @@
 package site.metacoding.greenrandomrpg.web.controller;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.greenrandomrpg.config.auth.LoginUser;
 import site.metacoding.greenrandomrpg.domain.user.User;
+import site.metacoding.greenrandomrpg.service.monster.MonsterService;
 import site.metacoding.greenrandomrpg.service.user.UserService;
 import site.metacoding.greenrandomrpg.web.dto.ResponseDto;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
@@ -30,6 +32,7 @@ public class UserController {
 
     private final UserService userService;
     private final HttpSession session;
+    private final MonsterService monsterService;
 
     // 업데이트
     @PutMapping("/s/user/{id}")
@@ -92,6 +95,12 @@ public class UserController {
         User principal = loginUser.getUser();
         Timestamp userFreeTime = userService.무료뽑기시간확인(principal.getId());
         return new ResponseDto<>(1, "성공", userFreeTime.getTime());
+    }
+
+    @GetMapping("/monster")
+    public String monster() {
+        monsterService.몬스터삽입();
+        return "redirect:/";
     }
 
 }
