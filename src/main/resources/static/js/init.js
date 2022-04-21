@@ -82,7 +82,8 @@ $.ajax({
 */
 function moveRight() {
   if (right) {
-    if (heroX < 1255) {
+    if (heroX < bgfield.parentElement.clientWidth*0.975) {
+      console.log("clientwidth"+bgfield.clientWidth);
       heroX += movingGap;
       enemyGauge+= movingGap;
       console.log(enemyGauge);      
@@ -107,7 +108,7 @@ function moveLeft() {
 function moveDown() {
   if (down) {
     if (heroY < bgfield.clientHeight*0.895) {
-      console.log("clientwidth"+bgfield.clientHeight);
+      
       heroY += movingGap;
       enemyGauge+= movingGap;
       console.log(enemyGauge);
@@ -182,6 +183,8 @@ function makeEnemyList() {
 }
 
 function makeEnemy() {
+  //여기서 레디스의 에너미를 먼저 뿌린다
+
   if (enemyList.length< 10){
     if (enemyGauge >230){
     let checkVal = Math.round(Math.random()*100);
@@ -202,15 +205,7 @@ function makeEnemy() {
       enemyGauge =0;
           } 
   }
-  /* enemyList.forEach(enemy => {
-    if (enemy.status === true) {
-      enemy.EnemyImg.createEnemy(enemy.x, enemy.y);
-      if (enemy.y + enemyHeight > 580) {
-        enemy.x = randomiseX();
-        enemy.y = randomiseY();
-      }
-    }
-  }); */
+  
     }
   }
 
@@ -234,7 +229,7 @@ function encounter() {
           //여기서 정보를 레디스로 넘긴다.
           
           
-          //    window.location.replace("battle.html");
+              window.location.replace("/s/battle");
       
           //audioplay(encounterSound);
           
