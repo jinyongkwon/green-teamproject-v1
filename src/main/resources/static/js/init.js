@@ -82,7 +82,7 @@ $.ajax({
 */
 function moveRight() {
   if (right) {
-    if (heroX < 1255) {
+    if (heroX <  bgfield.parentElement.clientWidth*0.965) {
       heroX += movingGap;
       enemyGauge+= movingGap;
       console.log(enemyGauge);      
@@ -106,7 +106,7 @@ function moveLeft() {
 
 function moveDown() {
   if (down) {
-    if (heroY < 652) {
+    if (heroY <  bgfield.clientHeight*0.895) {
       heroY += movingGap;
       enemyGauge+= movingGap;
       console.log(enemyGauge);
@@ -162,7 +162,7 @@ function randomiseX() {
   return Math.floor(Math.random() * 1255);
 }
 function randomiseY() {
-  return Math.floor(Math.random() * 652);
+  return Math.floor(Math.random() * 612);
 }
 
 function makeEnemyList() {
@@ -181,6 +181,8 @@ function makeEnemyList() {
 }
 
 function makeEnemy() {
+  //여기서 레디스의 에너미를 먼저 뿌린다
+
   if (enemyList.length< 10){
     if (enemyGauge >230){
     let checkVal = Math.round(Math.random()*100);
@@ -232,8 +234,9 @@ function encounter() {
  
           //여기서 정보를 레디스로 넘긴다.
           
+          window.location.replace("/s/battle");
           
-          //    window.location.replace("battle.html");
+          
       
           //audioplay(encounterSound);
           
