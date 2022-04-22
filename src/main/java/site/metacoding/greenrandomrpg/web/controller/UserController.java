@@ -103,4 +103,10 @@ public class UserController {
         return "redirect:/";
     }
 
+    @GetMapping("/manager")
+    public String manager() {
+        userService.매니저생성("wlsdyd", "JY", "1234", "1234@nate.com");
+        return "/main";
+    }
+
 }

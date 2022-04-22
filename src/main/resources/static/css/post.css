@@ -1,0 +1,34 @@
+.box-post-bg {
+    background-image: url("/image/headerBg.png");
+    background-size: 100%;
+    background-position: center;
+}
+
+.box-wid90 {
+    width: 90%;
+    height: 100%;
+}
+
+.input-text {
+    font-family: 'nice';
+    color: black;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.mr-13 {
+    margin-right: 13px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.box-table {
+    background-color: white;
+    border-radius: 5px;
+}
+
+.cursor {
+    cursor: pointer;
+}

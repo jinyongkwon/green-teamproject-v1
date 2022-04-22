@@ -46,6 +46,9 @@ public class User {
     @Column(nullable = false)
     private Integer coin;
 
+    @Column(nullable = false)
+    private boolean manager;
+
     @OneToOne
     @JoinColumn(name = "rpgId")
     private Rpg rpg;

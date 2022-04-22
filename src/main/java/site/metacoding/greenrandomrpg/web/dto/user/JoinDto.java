@@ -25,6 +25,7 @@ public class JoinDto {
         user.setNickname(this.nickname);
         user.setPassword(this.password);
         user.setEmail(this.email);
+        user.setManager(false);
         user.setCoin(100000);
         user.setRpg(rpg);
         return user;

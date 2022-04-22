@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<body>
+    <div class="box-all box-post-bg">
+        <div class="container">
+            <div class="d-flex justify-content-between ">
+                <div class="mt-3 header-btn-font">내가 쓴글 보기</div>
+                <a href="/s/question/writeForm">
+                    <div class="mt-3 header-btn-font">건의하기</div>
+                </a>
+            </div>
+            <table class="table mt-3 box-table">
+                <thead>
+                    <tr class="input-text">
+                        <th>제목</th>
+                        <th>건의 날짜</th>
+                        <th>진행사항</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#questions}}
+                    <tr class="input-text cursor" onclick="location.href='/s/question/{{id}}'">
+                        <td>{{title}}</td>
+                        <td>{{FormatCreateDate}}</td>
+                        <td>{{StringComment}}</td>
+                    </tr>
+                    {{/questions}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
