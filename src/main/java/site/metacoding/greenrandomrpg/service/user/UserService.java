@@ -149,43 +149,4 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    @Transactional
-    public User 매니저생성(String username, String nickname, String password, String email) {
-        Rpg newRpg = new Rpg();
-        newRpg.setAttack(1000);
-        newRpg.setHp(10000);
-        newRpg.setMaxHp(10000);
-        newRpg.setHtml(0);
-        newRpg.setJava(0);
-        newRpg.setJsp(0);
-        newRpg.setSpring(0);
-        rpgRepository.save(newRpg);
-        User user = new User();
-        user.setUsername(username);
-        user.setNickname(nickname);
-        user.setPassword(password);
-        user.setEmail(email);
-        user.setManager(true);
-        user.setCoin(100000);
-        user.setRpg(newRpg);
-        String rawPassword = user.getPassword();
-        String encPassword = bCryptPasswordEncoder.encode(rawPassword);
-        user.setPassword(encPassword);
-        return userRepository.save(user);
-    }
-
-    // public User 유저수정(Integer id, User user) {
-    // Optional<User> userOp = userRepository.findById(id);
-
-    // if (userOp.isPresent()) {
-    // User userEntity = userOp.get();
-    // userEntity.setNickname(user.getNickname());
-    // userEntity.setPassword(user.getPassword());
-    // userEntity.setEmail(user.getEmail());
-
-    // return userEntity;
-    // }
-    // return null;
-    // }
-
 }

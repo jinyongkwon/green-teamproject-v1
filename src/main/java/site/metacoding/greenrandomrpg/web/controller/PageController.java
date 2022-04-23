@@ -1,7 +1,5 @@
 package site.metacoding.greenrandomrpg.web.controller;
 
-import java.util.List;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,12 +7,10 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.greenrandomrpg.config.auth.LoginUser;
 import site.metacoding.greenrandomrpg.domain.monster.Monster;
-import site.metacoding.greenrandomrpg.domain.question.Question;
 import site.metacoding.greenrandomrpg.service.monster.MonsterService;
 import site.metacoding.greenrandomrpg.service.question.QuestionService;
 

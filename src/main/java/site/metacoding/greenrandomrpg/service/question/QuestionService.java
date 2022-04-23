@@ -3,7 +3,6 @@ package site.metacoding.greenrandomrpg.service.question;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.Id;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -38,13 +37,8 @@ public class QuestionService {
         postRepository.save(questionEntity);
     }
 
-    public List<Question> 질문목록가져오기(Integer userId, User principal) {
-        List<Question> questions = null;
-        if (principal.isManager()) {
-            questions = postRepository.findAll();
-        } else {
-            questions = postRepository.findByUserId(userId);
-        }
+    public List<Question> 질문목록가져오기(Integer userId) {
+        List<Question> questions = postRepository.findByUserId(userId);
         return questions;
     }
 

@@ -1,6 +1,5 @@
 package site.metacoding.greenrandomrpg.web.controller;
 
-import java.lang.ProcessBuilder.Redirect;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
@@ -40,14 +39,12 @@ public class UserController {
 
         System.out.println(updateDto);
         User principal = (User) session.getAttribute("principal");
-        System.out.println("principal" + principal);
 
         if (principal.getId() != id) {
             throw new RuntimeException("동기화되지 않았다..");
         }
         User userUpdate = userService.업데이트(id, updateDto);
         session.setAttribute("principal", userUpdate);
-        System.out.println("업데이트 잘됐나 확인*************" + userUpdate);
         return new ResponseDto<>(1, "수정완료", null);
     }
 
@@ -62,7 +59,6 @@ public class UserController {
     @GetMapping("/logout")
     public String logout() {
         session.invalidate();
-        System.out.println("로그아웃 잘 작동하고 있나 확인");
         return "redirect:/";
     }
 
@@ -70,7 +66,6 @@ public class UserController {
     @PostMapping("/id-find")
     public String usernameFind(UsernameRespDto usernameRespDto) {
         userService.아이디찾기(usernameRespDto);
-        System.out.println("아이디 찾기 작동중인지 controller에서 확인하기");
         return "redirect:/";
     }
 
@@ -101,12 +96,6 @@ public class UserController {
     public String monster() {
         monsterService.몬스터삽입();
         return "redirect:/";
-    }
-
-    @GetMapping("/manager")
-    public String manager() {
-        userService.매니저생성("wlsdyd", "JY", "1234", "1234@nate.com");
-        return "/main";
     }
 
 }

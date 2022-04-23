@@ -19,12 +19,4 @@ public class RpgService {
         return rstate;
     }
 
-    // userEntity.getRpg().setAttack(UpdateDto.getAttack());
-    // userEntity.getRpg().setHp(UpdateDto.getHp());
-    // userEntity.getRpg().setMaxHp(UpdateDto.getHp());
-    // userEntity.getRpg().setJava(UpdateDto.getJava());
-    // userEntity.getRpg().setHtml(UpdateDto.getHtml());
-    // userEntity.getRpg().setJsp(UpdateDto.getJsp());
-    // userEntity.getRpg().setSpring(UpdateDto.getSpring());
-
 }

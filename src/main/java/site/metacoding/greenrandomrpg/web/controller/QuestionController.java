@@ -39,10 +39,8 @@ public class QuestionController {
 
     // 질문게시판 목록
     @GetMapping("/s/question/list/{userId}")
-    public String questionList(@PathVariable Integer userId, Model model,
-            @AuthenticationPrincipal LoginUser loginUser) {
-        User principal = loginUser.getUser();
-        List<Question> questions = questionService.질문목록가져오기(userId, principal);
+    public String questionList(@PathVariable Integer userId, Model model) {
+        List<Question> questions = questionService.질문목록가져오기(userId);
         model.addAttribute("questions", questions);
         return "question/list";
     }
