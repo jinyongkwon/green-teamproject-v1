@@ -9,7 +9,7 @@
 - 한영인
 
 ### 1. 의존성
-- devtools (Spring성)
+- #####devtools (Spring성)
 - spring web (mvc)
 - mustache (View)
 - lombok 
@@ -20,22 +20,22 @@
 - security (보안)
 - validation (yml자기 지정변수 가져오기)
 ```
-    implementation 'org.webjars:webjars-locator-core'
-	implementation 'org.webjars:sockjs-client:1.0.2'
-	implementation 'org.webjars:stomp-websocket:2.3.3'
-	implementation 'org.springframework.boot:spring-boot-starter-websocket'
-	implementation 'org.springframework.boot:spring-boot-starter-mail'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-mustache'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-	runtimeOnly 'mysql:mysql-connector-java'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+implementation 'org.webjars:webjars-locator-core'
+implementation 'org.webjars:sockjs-client:1.0.2'
+implementation 'org.webjars:stomp-websocket:2.3.3'
+implementation 'org.springframework.boot:spring-boot-starter-websocket'
+implementation 'org.springframework.boot:spring-boot-starter-mail'
+implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+implementation 'org.springframework.boot:spring-boot-starter-mustache'
+implementation 'org.springframework.boot:spring-boot-starter-web'
+implementation 'org.springframework.boot:spring-boot-starter-security'
+implementation 'org.springframework.boot:spring-boot-starter-validation'
+compileOnly 'org.projectlombok:lombok'
+developmentOnly 'org.springframework.boot:spring-boot-devtools'
+runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+runtimeOnly 'mysql:mysql-connector-java'
+annotationProcessor 'org.projectlombok:lombok'
+testImplementation 'org.springframework.boot:spring-boot-starter-test'
 ```
 
 ### 2. 활용기술
