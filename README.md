@@ -7,33 +7,37 @@
 - 한영인
 ---
 ### 의존성
-- devtools (Spring)
-- spring web (mvc)
-- mustache (View)
-- lombok 
-- jpa (DB접근)
-- mysqldb or mariadb (DB)
-- websocket (채팅)
-- mail (메일보내기)
-- security (보안)
-- validation (yml 자기 지정변수 가져오기)
++ devtools (Spring)
+    + 
+    ```
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    ```
++ spring web (mvc)
++ mustache (View)
++ lombok 
++ jpa (DB접근)
++ mysqldb or mariadb (DB)
++ websocket (채팅)
++ mail (메일보내기)
++ security (보안)
++ validation (yml 자기 지정변수 가져오기)
 ``` gradle
-    implementation 'org.webjars:webjars-locator-core'
-	implementation 'org.webjars:sockjs-client:1.0.2'
-	implementation 'org.webjars:stomp-websocket:2.3.3'
-	implementation 'org.springframework.boot:spring-boot-starter-websocket'
-	implementation 'org.springframework.boot:spring-boot-starter-mail'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-mustache'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-	runtimeOnly 'mysql:mysql-connector-java'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+implementation 'org.webjars:webjars-locator-core'
+implementation 'org.webjars:sockjs-client:1.0.2'
+implementation 'org.webjars:stomp-websocket:2.3.3'
+implementation 'org.springframework.boot:spring-boot-starter-websocket'
+implementation 'org.springframework.boot:spring-boot-starter-mail'
+implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+implementation 'org.springframework.boot:spring-boot-starter-mustache'
+implementation 'org.springframework.boot:spring-boot-starter-web'
+implementation 'org.springframework.boot:spring-boot-starter-security'
+implementation 'org.springframework.boot:spring-boot-starter-validation'
+compileOnly 'org.projectlombok:lombok'
+
+runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+runtimeOnly 'mysql:mysql-connector-java'
+annotationProcessor 'org.projectlombok:lombok'
+testImplementation 'org.springframework.boot:spring-boot-starter-test'
 ```
 ---
 ### 활용기술
