@@ -2,6 +2,7 @@
 $("#password-error").hide();
 $("#username-error").hide();
 $("#nickname-error").hide();
+$("#email-error").hide();
 
 let valid = {
     username: {
@@ -11,6 +12,9 @@ let valid = {
         state: false,
     },
     nickname: {
+        state: false,
+    },
+    email: {
         state: false,
     },
 }
@@ -30,9 +34,13 @@ $("#username").blur(() => {
 $("#nickname").blur(() => {
     nicknameSameCheck();
 });
+$("#email").blur(() => {
+    emailSameCheck();
+});
+
 
 function check() {
-    if (valid.username.state && valid.password.state && valid.nickname.state) {
+    if (valid.username.state && valid.password.state && valid.nickname.state && valid.email.state) {
         return true;
     } else {
         return false;
@@ -86,6 +94,25 @@ function passwordSameCheck() {
     } else {
         valid.password.state = false;
         $("#password-error").show();
+    }
+}
+
+
+async function emailSameCheck() {
+    let email = $("#email").val();
+
+    let response = await fetch(`/api/user/email-same-check?email=${email}`);
+    let responseParse = await response.json();
+    if (responseParse.code == 1) {
+        if (responseParse.data == true) {
+            valid.email.state = true;
+            $("#email-error").hide();
+        } else {
+            valid.email.state = false;
+            $("#email-error").show();
+        }
+    } else {
+        alert(responseParse.msg);
     }
 }
 

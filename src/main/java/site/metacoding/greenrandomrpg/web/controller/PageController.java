@@ -1,7 +1,5 @@
 package site.metacoding.greenrandomrpg.web.controller;
 
-import java.util.List;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,14 +11,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.greenrandomrpg.config.auth.LoginUser;
 import site.metacoding.greenrandomrpg.domain.monster.Monster;
-import site.metacoding.greenrandomrpg.domain.user.User;
 import site.metacoding.greenrandomrpg.service.monster.MonsterService;
+import site.metacoding.greenrandomrpg.service.question.QuestionService;
 
 @RequiredArgsConstructor
 @Controller
 public class PageController {
 
     private final MonsterService monsterService;
+    private final QuestionService questionService;
 
     // 수정 페이지 이동
     @GetMapping("/s/user/updateForm")
@@ -103,4 +102,5 @@ public class PageController {
         model.addAttribute("ddong", true);
         return "ddong";
     }
+
 }

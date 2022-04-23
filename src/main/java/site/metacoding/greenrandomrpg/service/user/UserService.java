@@ -193,18 +193,4 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    // public User 유저수정(Integer id, User user) {
-    // Optional<User> userOp = userRepository.findById(id);
-
-    // if (userOp.isPresent()) {
-    // User userEntity = userOp.get();
-    // userEntity.setNickname(user.getNickname());
-    // userEntity.setPassword(user.getPassword());
-    // userEntity.setEmail(user.getEmail());
-
-    // return userEntity;
-    // }
-    // return null;
-    // }
-
 }
