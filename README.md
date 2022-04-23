@@ -9,31 +9,57 @@
 - 한영인
 
 ### 1. 의존성
-- devtools
+- devtools (Spring성)
 - spring web (mvc)
-- mustache
-- lombok
-- jpa
-- mysqldb
+- mustache (View)
+- lombok 
+- jpa (DB접근)
+- mysqldb or mariadb (DB)
+- websocket (채팅)
+- mail (메일보내기)
+- security (보안)
+- validation (yml자기 지정변수 가져오기)
+```
+    implementation 'org.webjars:webjars-locator-core'
+	implementation 'org.webjars:sockjs-client:1.0.2'
+	implementation 'org.webjars:stomp-websocket:2.3.3'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+```
 
 ### 2. 활용기술
-- Springboot
+- Springboot 
 - Java
 - Jquery
 - BootStrap
 - MySQL
 - WebSocket
-- Redis
+- Security
+- SMTP
 
 ### 3. 페이지 
-- 메인페이지
-- 로그인페이지
-- 회원가입페이지
-- 그린랜덤알피지 => 전투준비페이지 (진행중)
-- 그린랜덤알피지 => 전투페이지
-- 그린랜덤알피지 => 상점페이지
-- 책피하기 - (개발예정)
-- 쿠키런(가명) - (개발예정)
+> 로그인페이지
+> 회원가입페이지
+> 메인페이지
+>> 채팅페이지
+>> 질문게시판페이지
+>> 그린랜덤알피지
+>>> 전투준비페이지
+>>> 전투페이지
+>>> 상점페이지
+>> 응가피하기
+>>> 랭킹페이지
 
 ### 4. 기능
 - WebSocket을 활용한 서버 채팅
