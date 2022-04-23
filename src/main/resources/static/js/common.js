@@ -14,6 +14,8 @@ let User = {
 }
 let isRecovery = false;
 
+
+
 $("#btn-recovery").click(() => {
     if (isRecovery == false) {
         isRecovery = true;
@@ -101,3 +103,8 @@ let hpbarChange = () => {
 }
 
 hpbarChange();
+
+
+
+
+

@@ -31,4 +31,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(value = "SELECT * FROM User WHERE rpgId =:rpgId", nativeQuery = true)
     User findUserByRpgId(@Param("rpgId") Integer rpgId);
 
+    @Query(value = "SELECT * FROM User WHERE rankingId =:rankingId", nativeQuery = true)
+    User findUserByRankingId(@Param("rankingId") Integer rankingId);
+
+    @Query(value = "SELECT * FROM User WHERE nickname like %:keyword%", nativeQuery = true)
+    Optional<User> mSearch(@Param("keyword") String keyword);
+
 }

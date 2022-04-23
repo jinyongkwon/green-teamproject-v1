@@ -18,6 +18,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.metacoding.greenrandomrpg.domain.ranking.Ranking;
 import site.metacoding.greenrandomrpg.domain.rpg.Rpg;
 
 @AllArgsConstructor
@@ -49,6 +50,10 @@ public class User {
     @OneToOne
     @JoinColumn(name = "rpgId")
     private Rpg rpg;
+
+    @OneToOne
+    @JoinColumn(name = "rankingId")
+    private Ranking ranking;
 
     @Column(nullable = false)
     @CreatedDate
