@@ -52,33 +52,19 @@
         </div>
     </div>
     <div class="box-body-half d-flex align-items-center">
-        <div class="d-flex justify-content-center box-game">
+        <div class="d-flex justify-content-between box-game">
+            {{#games}}
             <div class="col-xl-1">
             </div>
             <div class="col-xl-2">
-                <a href="/s/ready">
-                    <img class="full" src="/image/randomrpglogo.jpg">
+                <a href="{{url}}">
+                    <img class="full" src="/upload/{{image}}">
                 </a>
-                <a href="/s/ready" class="game-text">
-                    <p class="text-center">그린랜덤알피지</p>
-                </a>
-            </div>
-            <div class="col-xl-1">
-            </div>
-            <div class="col-xl-2">
-                <a href="/s/ddong">
-                    <img class="full" src="/image/ddonglogo.png">
-                </a>
-                <a href="/s/ddong">
-                    <p class="game-text text-center">책피하기(예정)</p>
+                <a href="{{url}}" class="game-text">
+                    <p class="text-center">{{name}}</p>
                 </a>
             </div>
-            <div class="col-xl-1">
-            </div>
-            <div class="col-xl-2">
-                <img class="full" src="/image/cookierunlogo.jpg">
-                <p class="game-text text-center">쿠키런(예정)</p>
-            </div>
+            {{/games}}
             <div class="col-xl-1">
             </div>
         </div>
