@@ -12,13 +12,17 @@ $("#btn-chat").click(() => {
     window.open('/s/chat', '채팅', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
 });
 
+
+
 $("#btn-ranking").click(() => {
     window.open('/rank', '랭킹', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
 });
 
+
 $("#btn-question").click(() => {
     window.open('/s/question/writeForm', '채팅', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
 });
+
 
 
 

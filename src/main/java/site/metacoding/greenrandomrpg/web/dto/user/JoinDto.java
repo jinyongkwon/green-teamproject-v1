@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.greenrandomrpg.domain.ranking.Ranking;
 
+import lombok.RequiredArgsConstructor;
+import site.metacoding.greenrandomrpg.domain.ranking.Ranking;
 import site.metacoding.greenrandomrpg.domain.rpg.Rpg;
 import site.metacoding.greenrandomrpg.domain.user.User;
 

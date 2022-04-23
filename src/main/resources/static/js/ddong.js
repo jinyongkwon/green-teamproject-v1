@@ -52,25 +52,14 @@ let ani = () => { // 응가 움직임
         if (ddongX < charTarget && charTarget < ddongX + ddongWid) { // 캐릭터 죽음.
             isLive = false;
             $("#char-img").attr('src', '/image/ddong-die.png');
-            
-            if(isLive == false){
-                
+
+            if(isLive == false){                
                 score();
             }
-            
         }
     });
     num++; // 응가 숫자 ++
 }
-
-// function window(){
-//     if(isLive == false){
-//             window.open('/rank', '랭킹', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
-//     }
-//     isLive = true;
-// }
-
-// window();
 
 async function score() {
     let id = $("#id").val();

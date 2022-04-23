@@ -1,5 +1,7 @@
 package site.metacoding.greenrandomrpg.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,16 +12,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.greenrandomrpg.config.auth.LoginUser;
+import site.metacoding.greenrandomrpg.domain.game.Game;
 import site.metacoding.greenrandomrpg.domain.monster.Monster;
+import site.metacoding.greenrandomrpg.service.game.GameService;
 import site.metacoding.greenrandomrpg.service.monster.MonsterService;
-import site.metacoding.greenrandomrpg.service.question.QuestionService;
 
 @RequiredArgsConstructor
 @Controller
 public class PageController {
 
     private final MonsterService monsterService;
-    private final QuestionService questionService;
+    private final GameService gameService;
 
     // 수정 페이지 이동
     @GetMapping("/s/user/updateForm")
@@ -52,6 +55,8 @@ public class PageController {
     // 메인페이지
     @GetMapping("/")
     public String main(Model model) {
+        List<Game> games = gameService.게임목록가져오기();
+        model.addAttribute("games", games);
         model.addAttribute("main", true);
         return "main";
     }
