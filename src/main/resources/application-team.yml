@@ -40,3 +40,6 @@ spring:
   output:
     ansi:
       enabled: always
+
+file:
+  path: /Users/green/upload/

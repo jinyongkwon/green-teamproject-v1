@@ -1,3 +1,5 @@
+
+
 let num = 0; // 응가 생성 수
 let deleteNum = 0; // 응가 삭제 수
 let isleft = true; // 왼쪽봄
@@ -50,20 +52,25 @@ let ani = () => { // 응가 움직임
         if (ddongX < charTarget && charTarget < ddongX + ddongWid) { // 캐릭터 죽음.
             isLive = false;
             $("#char-img").attr('src', '/image/ddong-die.png');
-            score();
+            
+            if(isLive == false){
+                
+                score();
+            }
+            
         }
     });
     num++; // 응가 숫자 ++
 }
 
-function window(){
-    if(isLive == false){
-            window.open('/rank', '랭킹', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
-    }
-    isLive = true;
-}
+// function window(){
+//     if(isLive == false){
+//             window.open('/rank', '랭킹', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
+//     }
+//     isLive = true;
+// }
 
-window();
+// window();
 
 async function score() {
     let id = $("#id").val();
