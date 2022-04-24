@@ -106,12 +106,13 @@
 |랜덤값활용|JavaScript|그린랜덤알피지|-|
 ---
 ### DB모델링및 관계
-- id, nickname, username, password , email , coin ,createDate, updateDate, rpgId => user
+- id, nickname, username, password , email , coin ,createDate, updateDate, rpgId, rankingId => user
 - id, attack, maxHp, hp, html, java, jsp, spring, freeTIme => rpg
 - id, attack, hp, maxHp, name => monster
 - id, title, content, file, createDate, updateDate, userId => question
 - id, content, createDate, questionId, userId => comment
 - id, name, image, url => game
+- id, ranking, score => ranking
 - id, createDate, email, password, updateDate, username => manager
 ---
 ### 매니저 서버

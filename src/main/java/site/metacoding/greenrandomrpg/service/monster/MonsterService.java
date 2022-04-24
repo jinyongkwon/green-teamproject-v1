@@ -19,16 +19,18 @@ public class MonsterService {
     private final UserRepository userRepository;
 
     public void 몬스터삽입() {
-        for (int i = 1001; i < 1101; i++) {
-            Random random = new Random();
-            int attack = random.nextInt(50) + 1;
-            int hp = random.nextInt(50) + 1;
-            Monster monster = new Monster();
-            monster.setAttack(attack);
-            monster.setHp(hp);
-            monster.setMaxHp(hp);
-            monster.setName("몬스터" + i);
-            monsterRepository.save(monster);
+        for (int j = 1; j < 40; j++) {
+            for (int i = 1 + j * 50; i < 51 + j * 50; i++) {
+                Random random = new Random();
+                int attack = random.nextInt(50 * j) + 1;
+                int hp = random.nextInt(50 * j) + 1;
+                Monster monster = new Monster();
+                monster.setAttack(attack);
+                monster.setHp(hp);
+                monster.setMaxHp(hp);
+                monster.setName("몬스터" + i);
+                monsterRepository.save(monster);
+            }
         }
     }
 

@@ -137,8 +137,9 @@ public class UserController {
     }
 
     @GetMapping("/monster")
-    public String monster() {
+    public String monster() throws InterruptedException {
         monsterService.몬스터삽입();
+        Thread.sleep(3000);
         return "redirect:/";
     }
 

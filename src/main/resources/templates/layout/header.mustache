@@ -84,7 +84,7 @@
                 </div>
                 {{/ddong}}
                 {{^ddong}}
-                {{#ranking}}
+                {{#rank}}
                 <div class="d-flex header-right-height-half header-btn-font ">
                     <input type="text" class="header-btn-font text-right full" value="최고점수" readonly>
                     <input type="text" class="header-btn-font ml-30 full" value="{{principal.ranking.score}}" readonly>
@@ -94,8 +94,8 @@
                     <input type="text" class="header-btn-font ml-30 full" value="{{principal.ranking.ranking}}"
                         readonly>
                 </div>
-                {{/ranking}}
-                {{^ranking}}
+                {{/rank}}
+                {{^rank}}
                 <div class="d-flex header-right-height-half header-btn-font ">
                     <input type="text" class="header-btn-font text-right full" value="공격력 " readonly>
                     <input type="text" id="user-power" class="header-btn-font ml-30 full"
@@ -106,7 +106,7 @@
                     <input type="text" id="user-coin" class="header-btn-font ml-30 full" value="{{principal.coin}}"
                         readonly>
                 </div>
-                {{/ranking}}
+                {{/rank}}
                 {{/ddong}}
             </div>
             {{/main}}

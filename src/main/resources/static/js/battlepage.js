@@ -171,10 +171,10 @@ function hitText() { // 몬스터와 캐릭터가 한 행동을 text로 뛰워�
 }
 
 let userWin = () => {
-    let plushp = Math.floor(User.maxHp * 0.01 * rand(10, 30));
+    let plushp = Math.floor(User.maxHp * 0.005 * rand(10, 30));
     $("#user-hptext").val(`${User.nowHp}/${User.maxHp + plushp}`)
     $("#textbox").prepend(`${plushp}의 HP를 획득하셨습니다.\n`);
-    let plusCoin = Math.floor(User.power * 0.1 * rand(10, 30));
+    let plusCoin = Math.floor(User.power * 0.5 * rand(10, 30));
     $("#user-coin").val(`${parseInt(User.coin) + plusCoin}`)
     $("#textbox").prepend(`${plusCoin}의 코인을 획득하셨습니다.\n`);
 }
