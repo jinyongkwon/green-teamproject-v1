@@ -2,6 +2,7 @@ package site.metacoding.greenrandomrpg.service.user;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.greenrandomrpg.domain.ranking.Ranking;
+import site.metacoding.greenrandomrpg.domain.ranking.RankingRepository;
 import site.metacoding.greenrandomrpg.domain.rpg.Rpg;
 import site.metacoding.greenrandomrpg.domain.rpg.RpgRepository;
 import site.metacoding.greenrandomrpg.domain.user.User;
@@ -16,6 +19,7 @@ import site.metacoding.greenrandomrpg.domain.user.UserRepository;
 import site.metacoding.greenrandomrpg.util.email.EmailUtil;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
 import site.metacoding.greenrandomrpg.web.dto.user.PasswordResetReqDto;
+import site.metacoding.greenrandomrpg.web.dto.user.ScoreDto;
 import site.metacoding.greenrandomrpg.web.dto.user.UpdateDto;
 import site.metacoding.greenrandomrpg.web.dto.user.UsernameRespDto;
 
@@ -26,7 +30,33 @@ public class UserService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final UserRepository userRepository;
     private final RpgRepository rpgRepository;
+    private final RankingRepository rankingRepository;
     private final EmailUtil emailUtil;
+
+    @Transactional
+    public List<User> 랭킹순서유저가져오기() {
+        List<User> userEntity = userRepository.findAllByRankingDesc();
+        return userEntity;
+    }
+
+    @Transactional
+    public void 랭킹변경하기() {
+        List<Ranking> rankingUpdate = rankingRepository.findAllRanking();
+
+        for (int i = 0; i < rankingUpdate.size(); i++) { // 사이즈 4번 돌고
+            rankingUpdate.get(i).setRanking(i + 1);
+        }
+    }
+
+    public User 유저찾기(String keyword) {
+        Optional<User> userSearch = userRepository.mSearch(keyword);
+        if (userSearch.isPresent()) {
+            User userEntity = userSearch.get();
+            return userEntity;
+        } else {
+            return null;
+        }
+    }
 
     public Timestamp 무료뽑기시간확인(Integer userId) {
         Optional<User> userOp = userRepository.findById(userId);
@@ -79,6 +109,21 @@ public class UserService {
         } else {
             throw new RuntimeException("이메일을 보내는데 실패했습니다");
         }
+    }
+
+    @Transactional
+    public User 스코어업데이트(Integer id, ScoreDto scoreDto) {
+        Optional<User> userOp = userRepository.findById(id);
+
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+            if (userEntity.getRanking().getScore() < scoreDto.getScore()) {
+                userEntity.getRanking().setScore(scoreDto.getScore());
+            }
+            // userEntity.getRanking().setRank(scoreDto.getRank());
+            return userEntity;
+        }
+        return null;
     }
 
     @Transactional
@@ -142,7 +187,11 @@ public class UserService {
         newRpg.setJsp(0);
         newRpg.setSpring(0);
         rpgRepository.save(newRpg);
-        User user = joinDto.toEntity(newRpg);
+        Ranking newRanking = new Ranking();
+        newRanking.setScore(0);
+        newRanking.setRanking(0);
+        rankingRepository.save(newRanking);
+        User user = joinDto.toEntity(newRpg, newRanking);
         String rawPassword = user.getPassword();
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setPassword(encPassword);
