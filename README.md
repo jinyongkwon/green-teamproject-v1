@@ -81,6 +81,9 @@
     + 회원가입
     + 채팅
     + 질문게시판
+        + 질문등록
+        + 질문 목록보기
+        + 질문 상세보기
     + 그린랜덤알피지
         + 전투준비
         + 전투
@@ -89,15 +92,17 @@
         + 게임진행
         + 랭킹
 ---
-### 기능
 |기능|활용기술|활용페이지|샘플링크|
 |---|----|-----|----|
-|채팅|Websocket|채팅페이지|[스프링채팅샘플깃](https://github.com/jinyongkwon/Spring-Websocket-sample)|
-- WebSocket을 활용한 서버 채팅
-- 회원가입 유효성 검사.
-- Redis를 활용한 전투준비 페이지에서의 위치를 기억
-- Random값을 활용해서 상점 및 적 처치시 보상 구현
-- JQuery를 활용한 각종 애니메이션 효과 구현.
+|채팅|WebSocket|채팅|[스프링 채팅 샘플 깃](https://github.com/jinyongkwon/Spring-Websocket-sample)|
+|채팅도배금지|-|채팅|-|
+|욕설필터링|-|채팅|-|
+|유효성검사|JPA|회원가입|[블로그버전2](https://github.com/jinyongkwon/BlogProject-V2)|
+|중복확인|JPA|회원가입, 로그인, 아이디찾기, 비밀번호찾기|[블로그버전2](https://github.com/jinyongkwon/BlogProject-V2)|
+|보안|Security|모든페이지|[블로그버전3](https://github.com/jinyongkwon/BlogProject-V3)|
+|사진등록및확인|JPA|회원가입, 로그인, 아이디찾기, 비밀번호찾기|[파일업로드샘플깃](https://github.com/jinyongkwon/Spring-Fileupload-sample), [블로그버전3](https://github.com/jinyongkwon/BlogProject-V3)|
+|각종애니메이션|JQuery|그린랜덤알피지|-|
+|랜덤값활용|JavaScript|그린랜덤알피지|-|
 ---
 ### DB모델링및 관계
 - id, nickname, username, password , email , coin ,createDate, updateDate => 통합계정

@@ -27,7 +27,7 @@ public class MonsterService {
             monster.setAttack(attack);
             monster.setHp(hp);
             monster.setMaxHp(hp);
-            monster.setName("진용" + i);
+            monster.setName("몬스터" + i);
             monsterRepository.save(monster);
         }
     }
