@@ -90,7 +90,9 @@
         + 랭킹
 ---
 ### 기능
-|기능|
+|기능|활용기술|활용페이지|샘플링크|
+|---|----|-----|----|
+|채팅|Websocket|채팅페이지|[스프링채팅샘플깃](https://github.com/jinyongkwon/Spring-Websocket-sample)|
 - WebSocket을 활용한 서버 채팅
 - 회원가입 유효성 검사.
 - Redis를 활용한 전투준비 페이지에서의 위치를 기억
