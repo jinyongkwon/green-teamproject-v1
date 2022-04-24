@@ -1,7 +1,5 @@
 package site.metacoding.greenrandomrpg.domain.ranking;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -9,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AllArgsConstructor;
@@ -27,15 +24,10 @@ public class Ranking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer rank;
-
-    // @Column(nullable = false)
-    // private String nickname;
+    @Column(nullable = false)
+    private Integer ranking;
 
     @Column(nullable = false)
     private Integer score;
-
-    // @CreatedDate
-    // private LocalDateTime createDate;
 
 }

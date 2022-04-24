@@ -3,6 +3,7 @@ let deleteNum = 0; // 응가 삭제 수
 let isleft = true; // 왼쪽봄
 let isright = false; // 오른쪽 봄
 let isLive = true; // 살아있는지.
+let one = 0;
 let endLeft = (window.screen.width - $("#box").width()) / 2; // 왼쪽 끝
 let endRight = endLeft + $("#box").width(); // 오른쪽 끝
 
@@ -52,12 +53,12 @@ let ani = () => { // 응가 움직임
         let charTarget = $("#char").offset().left + $("#char").width() / 2; // 캐릭터의 중앙 x위치
         if (ddongX < charTarget && charTarget < ddongX + ddongWid) { // 캐릭터 죽음.
             isLive = false;
-            $("#char-img").attr('src', '/image/ddong-die.png');
-
-            if(isLive == false){        
+            if (one == 0) {
+                $("#char-img").attr('src', '/image/ddong-die.png');
                 $("#button-game").show();
                 $("#button-game1").show();
                 score();
+                one++;
             }
         }
     });
@@ -67,18 +68,15 @@ let ani = () => { // 응가 움직임
 async function score() {
     let id = $("#id").val();
     let scoreDto = {
-        score : $("#ddong-score").val()
+        score: $("#ddong-score").val()
     }
-    console.log(scoreDto);
-    let response = await fetch(`/s/ddong/${id}`, {
+    await fetch(`/s/ddong/${id}`, {
         method: "POST",
         body: JSON.stringify(scoreDto),
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         }
     });
-    console.log(response);
-    let responseParse = await response.json();
 }
 
 let createDdong = (num, wid) => { // 웅가 생성.

@@ -34,8 +34,8 @@ public class UserService {
     private final EmailUtil emailUtil;
 
     @Transactional
-    public List<User> 모든유저가져오기() {
-        List<User> userEntity = userRepository.findAll();
+    public List<User> 랭킹순서유저가져오기() {
+        List<User> userEntity = userRepository.findAllByRankingDesc();
         return userEntity;
     }
 
@@ -44,13 +44,18 @@ public class UserService {
         List<Ranking> rankingUpdate = rankingRepository.findAllRanking();
 
         for (int i = 0; i < rankingUpdate.size(); i++) { // 사이즈 4번 돌고
-            rankingUpdate.get(i).setRank(i + 1);
+            rankingUpdate.get(i).setRanking(i + 1);
         }
     }
 
-    public Optional<User> 유저찾기(String keyword) {
+    public User 유저찾기(String keyword) {
         Optional<User> userSearch = userRepository.mSearch(keyword);
-        return userSearch;
+        if (userSearch.isPresent()) {
+            User userEntity = userSearch.get();
+            return userEntity;
+        } else {
+            return null;
+        }
     }
 
     public Timestamp 무료뽑기시간확인(Integer userId) {
@@ -184,7 +189,7 @@ public class UserService {
         rpgRepository.save(newRpg);
         Ranking newRanking = new Ranking();
         newRanking.setScore(0);
-        newRanking.setRank(0);
+        newRanking.setRanking(0);
         rankingRepository.save(newRanking);
         User user = joinDto.toEntity(newRpg, newRanking);
         String rawPassword = user.getPassword();

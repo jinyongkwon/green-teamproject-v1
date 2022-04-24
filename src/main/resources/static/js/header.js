@@ -15,7 +15,7 @@ $("#btn-chat").click(() => {
 
 
 $("#btn-ranking").click(() => {
-    window.open('/rank', '랭킹', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
+    window.open('/rank', '랭킹', 'height=' + (popupHeight + 200) + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
 });
 
 

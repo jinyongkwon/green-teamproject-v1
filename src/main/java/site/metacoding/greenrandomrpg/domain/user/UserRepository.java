@@ -1,5 +1,6 @@
 package site.metacoding.greenrandomrpg.domain.user;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -34,7 +35,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(value = "SELECT * FROM User WHERE rankingId =:rankingId", nativeQuery = true)
     User findUserByRankingId(@Param("rankingId") Integer rankingId);
 
-    @Query(value = "SELECT * FROM User WHERE nickname like %:keyword%", nativeQuery = true)
+    @Query(value = "SELECT * FROM User WHERE nickname = :keyword", nativeQuery = true)
     Optional<User> mSearch(@Param("keyword") String keyword);
+
+    @Query(value = "SELECT * FROM user u left outer join ranking r on u.id = r.id ORDER BY score desc", nativeQuery = true)
+    List<User> findAllByRankingDesc();
 
 }

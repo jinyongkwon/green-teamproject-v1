@@ -3,12 +3,12 @@ package site.metacoding.greenrandomrpg.web.controller;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,21 +45,22 @@ public class UserController {
 
     // 랭킹 페이지 넘어가기
     @GetMapping("/rank")
-    public String rankingform() {
+    public String rankingform(Model model) {
+        model.addAttribute("rank", true);
         return "rankingForm";
     }
 
     // 랭킹 유저 검색하기
     @GetMapping("/api/search")
     public @ResponseBody ResponseDto<?> search(@RequestParam(defaultValue = "") String keyword) {
-        Optional<User> userSearch = userService.유저찾기(keyword);
-        return new ResponseDto<>(1, "성공", userSearch);
+        User userEntity = userService.유저찾기(keyword);
+        return new ResponseDto<>(1, "성공", userEntity);
     }
 
     // 랭킹 가져오고 데이터 변경하기
     @GetMapping("/s/api/user-all")
     public @ResponseBody ResponseDto<?> findAllUser(Ranking ranking) {
-        List<User> users = userService.모든유저가져오기();
+        List<User> users = userService.랭킹순서유저가져오기();
         return new ResponseDto<>(1, "성공", users);
     }
 
