@@ -101,7 +101,7 @@
 |중복확인|JPA|회원가입, 로그인, 아이디찾기, 비밀번호찾기|[블로그버전2](https://github.com/jinyongkwon/BlogProject-V2)|
 |보안|Security|모든페이지|[블로그버전3](https://github.com/jinyongkwon/BlogProject-V3)|
 |사진등록및확인|JPA|회원가입, 로그인, 아이디찾기, 비밀번호찾기|[파일업로드샘플깃](https://github.com/jinyongkwon/Spring-Fileupload-sample), [블로그버전3](https://github.com/jinyongkwon/BlogProject-V3)|
-|각종애니메이션|JQuery|그린랜덤알피지|-|
+|각종애니메이션|JQuery|그린랜덤알피지, 응가피하기|-|
 |랜덤값활용|JavaScript|그린랜덤알피지|-|
 ---
 ### DB모델링및 관계
