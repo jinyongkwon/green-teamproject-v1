@@ -8,37 +8,51 @@
 ---
 ### 의존성
 + devtools (Spring)
-    + 
     ```
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     ```
 + spring web (mvc)
+    ```
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    ```
 + mustache (View)
+    ```
+    implementation 'org.springframework.boot:spring-boot-starter-mustache'
+    ```
 + lombok 
+    ```
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    ```
 + jpa (DB접근)
+    ```
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    ```
 + mysqldb or mariadb (DB)
+    ```
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    runtimeOnly 'mysql:mysql-connector-java'
+    ```
 + websocket (채팅)
+    ```
+    implementation 'org.webjars:webjars-locator-core'
+    implementation 'org.webjars:sockjs-client:1.0.2'
+    implementation 'org.webjars:stomp-websocket:2.3.3'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    ```
 + mail (메일보내기)
+    ```
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    ```
 + security (보안)
-+ validation (yml 자기 지정변수 가져오기)
-``` gradle
-implementation 'org.webjars:webjars-locator-core'
-implementation 'org.webjars:sockjs-client:1.0.2'
-implementation 'org.webjars:stomp-websocket:2.3.3'
-implementation 'org.springframework.boot:spring-boot-starter-websocket'
-implementation 'org.springframework.boot:spring-boot-starter-mail'
-implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-implementation 'org.springframework.boot:spring-boot-starter-mustache'
-implementation 'org.springframework.boot:spring-boot-starter-web'
-implementation 'org.springframework.boot:spring-boot-starter-security'
-implementation 'org.springframework.boot:spring-boot-starter-validation'
-compileOnly 'org.projectlombok:lombok'
-
-runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-runtimeOnly 'mysql:mysql-connector-java'
-annotationProcessor 'org.projectlombok:lombok'
-testImplementation 'org.springframework.boot:spring-boot-starter-test'
-```
+    ```
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    ```
++ validation (yml 자기가 만든변수 가져오기)
+    ```
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    ```
 ---
 ### 활용기술
 - Springboot 
