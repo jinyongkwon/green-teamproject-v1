@@ -1,5 +1,3 @@
-
-
 let num = 0; // 응가 생성 수
 let deleteNum = 0; // 응가 삭제 수
 let isleft = true; // 왼쪽봄
@@ -7,6 +5,9 @@ let isright = false; // 오른쪽 봄
 let isLive = true; // 살아있는지.
 let endLeft = (window.screen.width - $("#box").width()) / 2; // 왼쪽 끝
 let endRight = endLeft + $("#box").width(); // 오른쪽 끝
+
+$("#button-game").hide();
+$("#button-game1").hide();
 
 $(document).keydown((event) => {
     if (isLive) {
@@ -53,7 +54,9 @@ let ani = () => { // 응가 움직임
             isLive = false;
             $("#char-img").attr('src', '/image/ddong-die.png');
 
-            if(isLive == false){                
+            if(isLive == false){        
+                $("#button-game").show();
+                $("#button-game1").show();
                 score();
             }
         }
