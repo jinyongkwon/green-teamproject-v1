@@ -38,6 +38,11 @@ public class UserController {
     private final HttpSession session;
     private final MonsterService monsterService;
 
+    @GetMapping("/question")
+    public String questionForm() {
+        return "questionForm";
+    }
+
     // 랭킹 페이지 넘어가기
     @GetMapping("/rank")
     public String rankingform() {

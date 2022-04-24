@@ -6,6 +6,9 @@ let isLive = true; // 살아있는지.
 let endLeft = (window.screen.width - $("#box").width()) / 2; // 왼쪽 끝
 let endRight = endLeft + $("#box").width(); // 오른쪽 끝
 
+$("#button-game").hide();
+$("#button-game1").hide();
+
 $(document).keydown((event) => {
     if (isLive) {
         if (event.keyCode == 37) { // 왼쪽
@@ -50,20 +53,16 @@ let ani = () => { // 응가 움직임
         if (ddongX < charTarget && charTarget < ddongX + ddongWid) { // 캐릭터 죽음.
             isLive = false;
             $("#char-img").attr('src', '/image/ddong-die.png');
-            score();
+
+            if(isLive == false){        
+                $("#button-game").show();
+                $("#button-game1").show();
+                score();
+            }
         }
     });
     num++; // 응가 숫자 ++
 }
-
-function window(){
-    if(isLive == false){
-            window.open('/rank', '랭킹', 'height=' + popupHeight + ', width=' + popupWidth + ', left=' + popupX + ', top=' + popupY + ',location=no,status=no,scrollbars=yes');
-    }
-    isLive = true;
-}
-
-window();
 
 async function score() {
     let id = $("#id").val();

@@ -85,6 +85,19 @@
     height: 100%;
 }
 
+.click-btn{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-family: 'nice';
+    color: #6AC3BF;
+    font-size: 20px;
+    font-weight: 600;
+    width: 50px
+}
+
 .box-footer-weapon {
     width: 10%;
     height: 100%;
