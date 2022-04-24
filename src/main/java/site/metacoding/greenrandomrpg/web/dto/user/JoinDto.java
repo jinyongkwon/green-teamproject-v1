@@ -23,7 +23,7 @@ public class JoinDto {
         user.setNickname(this.nickname);
         user.setPassword(this.password);
         user.setEmail(this.email);
-        user.setCoin(100000);
+        user.setCoin(4500);
         user.setRpg(rpg);
         user.setRanking(ranking);
         return user;

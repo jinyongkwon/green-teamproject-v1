@@ -34,17 +34,9 @@
                 <button id="btn-checkImg" class="full mt-3 btn btn-primary input-text">사진 확인하기</button>
             </div>
             {{/question.file}}
-            {{#principal.manager}}
-            <form action="/s/question/{{question.id}}/list/comment" method="post">
-                <textarea name="content" class="full mt-3" rows="4"></textarea>
-                <button class="full mt-3 btn btn-primary input-text">답글 달기</button>
-            </form>
-            {{/principal.manager}}
-            {{^principal.manager}}
             {{#question.IsComment}}
             <textarea name="content" class="full mt-3" rows="4" readonly>{{question.comment.content}}</textarea>
             {{/question.IsComment}}
-            {{/principal.manager}}
         </div>
     </div>
     </div>

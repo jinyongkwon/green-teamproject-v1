@@ -61,14 +61,4 @@ public class QuestionController {
         return "question/img";
     }
 
-    // 매니저 답글달기.
-    @PostMapping("/s/question/{id}/list/comment")
-    public String questionComment(@PathVariable Integer id, Comment comment,
-            @AuthenticationPrincipal LoginUser loginUser) {
-        User principal = loginUser.getUser();
-        comment.setUser(principal);
-        questionService.답글달기(comment, id);
-        return "redirect:/s/question/" + id;
-    }
-
 }
