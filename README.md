@@ -55,32 +55,40 @@
     ```
 ---
 ### 활용기술
-- Springboot 
-- Java
-- Jquery
-- BootStrap
-- MySQL Or MariDb
-- WebSocket
-- Security
+<img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=SpringBoot&logoColor=white">
+<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=white">
+<img src="https://img.shields.io/badge/JavaScript-3F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white">
+<img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=white">
+<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white">
+<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white">
+<img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=MariaDB&logoColor=white">
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
+<img src="https://img.shields.io/badge/SpringSecurity-6DB33F?style=for-the-badge&logo=SpringSecurity&logoColor=white">
++ WebSocket
+    + STOMP
+    + SockJS
 - SMTP
 ---
 ### 페이지 
-+ 로그인페이지
-+ 회원가입페이지
-+ 메인페이지
-    + 채팅페이지
-    + 질문게시판페이지
++ 메인
+    + 로그인
+        + 아이디찾기
+        + 비밀번호찾기
+    + 회원가입
+    + 채팅
+    + 질문게시판
     + 그린랜덤알피지
-        + 전투준비페이지
-        + 전투페이지
-        + 상점페이지
+        + 전투준비
+        + 전투
+        + 상점
     + 응가피하기
-        + 랭킹페이지
+        + 게임진행
+        + 랭킹
 ---
 ### 기능
+|기능|
 - WebSocket을 활용한 서버 채팅
 - 회원가입 유효성 검사.
-- 로그인 아이디 저장 체크버튼
 - Redis를 활용한 전투준비 페이지에서의 위치를 기억
 - Random값을 활용해서 상점 및 적 처치시 보상 구현
 - JQuery를 활용한 각종 애니메이션 효과 구현.
