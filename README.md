@@ -101,13 +101,18 @@
 |중복확인|JPA|회원가입, 로그인, 아이디찾기, 비밀번호찾기|[블로그버전2](https://github.com/jinyongkwon/BlogProject-V2)|
 |메일보내기|SMTP|아이디찾기, 비밀번호찾기|[메일보내기샘플깃](https://github.com/codingspecialist/Springboot-mail-test)|
 |보안|Security|모든페이지|[블로그버전3](https://github.com/jinyongkwon/BlogProject-V3)|
-|사진등록및확인|JPA|회원가입, 로그인, 아이디찾기, 비밀번호찾기|[파일업로드샘플깃](https://github.com/jinyongkwon/Spring-Fileupload-sample), [블로그버전3](https://github.com/jinyongkwon/BlogProject-V3)|
-|각종애니메이션|JQuery|그린랜덤알피지, 응가피하기|-|
+|사진등록및 확인|JPA|회원가입, 로그인, 아이디찾기, 비밀번호찾기|[파일업로드샘플깃](https://github.com/jinyongkwon/Spring-Fileupload-sample), [블로그버전3](https://github.com/jinyongkwon/BlogProject-V3)|
+|애니메이션|JQuery|그린랜덤알피지, 응가피하기|-|
 |랜덤값활용|JavaScript|그린랜덤알피지|-|
 ---
 ### DB모델링및 관계
-- id, nickname, username, password , email , coin ,createDate, updateDate => 통합계정
-- id, atk, Maxhp, hp, userId = > 랜덤알피지 1 = 통합계정 1
-- id, name, atk, Maxhp, hp => 랜덤알피지 몬스터
-- id, randomrpgId, html, jsp, java, spring => 무기 DB 1 = 랜덤알피지 1
-- id, userId, score => 책피하기 1 = 통합계정 1
+- id, nickname, username, password , email , coin ,createDate, updateDate, rpgId => user
+- id, attack, maxHp, hp, html, java, jsp, spring, freeTIme => rpg
+- id, attack, hp, maxHp, name => monster
+- id, title, content, file, createDate, updateDate, userId => question
+- id, content, createDate, questionId, userId => comment
+- id, name, image, url => game
+- id, createDate, email, password, updateDate, username => manager
+---
+### 매니저 서버
+- [매니저서버 깃](https://github.com/han-youngin/manager)
