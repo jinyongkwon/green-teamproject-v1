@@ -80,6 +80,9 @@
 
 ---
 ### 페이지 
+
+![FullpageFrame](https://user-images.githubusercontent.com/97710913/165023033-0e6d941b-45f1-429c-8ade-b3c8ea19663a.png)
+
 + 메인
     + 로그인
         + 아이디찾기
@@ -112,6 +115,7 @@
 |랜덤값활용|JavaScript|그린랜덤알피지|-|
 ---
 ### DB모델링및 관계
+![Screenshot_664](https://user-images.githubusercontent.com/97710913/165022905-2a348e39-ab7a-41ec-9efc-36fb9a2ea169.png)
 - id, nickname, username, password , email , coin ,createDate, updateDate, rpgId, rankingId => user
 - id, attack, maxHp, hp, html, java, jsp, spring, freeTIme => rpg
 - id, attack, hp, maxHp, name => monster
