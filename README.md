@@ -7,7 +7,7 @@
 #### |[**han-youngin**](https://github.com/han-youngin)| Backend&Admincontrol|
 한영인 (백엔드개발, 관리자 기능 구현) [](http://)
 #### |[**cotiful**](https://github.com/cotiful)  |Backend & Ranking system  |
-[유승현 ( 백엔드개발, 랭킹구현)](https://www.quora.com/What-does-beautiful-code-look-like)
+[유승현 ( 백엔드개발, 랭킹구현)](https://qph.fs.quoracdn.net/main-qimg-ac3d5bfb2b67893a97a79cb06e46566e.webp)
 #### |[**Misterless**](https://github.com/Misterless)  |Front,Errorcatcher,Js   |
 김무진 (프론트, JS구현, 오류검증)
 
