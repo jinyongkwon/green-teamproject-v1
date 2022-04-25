@@ -43,7 +43,11 @@ $(document).keydown((event) => {
 });
 
 let ani = () => { // 응가 움직임
-    $("#rain-ddong").append(createDdong(num, rand(8, 88))); // 응가 생성
+    console.log($("#box").offset().left);
+    console.log($("#box").width());
+    let boxLeft = $("#box").offset().left;
+    let boxright = $("#box").width() + boxLeft;
+    $("#rain-ddong").append(createDdong(num, rand(boxLeft, boxright))); // 응가 생성
     let ddongX = $(`#ddong${num}`).offset().left; // 응가의 x좌표
     let ddongWid = $(`#ddong${num}`).width()
     let move = $("#char").offset().top - $(`#ddong${num}`).height(); // 플레이어의 머리까지
@@ -80,7 +84,7 @@ async function score() {
 }
 
 let createDdong = (num, wid) => { // 웅가 생성.
-    return `<div id="ddong${num}" class="box-ddong" style="left:${wid}%">
+    return `<div id="ddong${num}" class="box-ddong" style="left:${wid}px">
                 <img id="ddong-img${num}" class="full" src="/image/ddonglogo.png">
             </div>`
 }
@@ -92,9 +96,9 @@ setTimeout(() => { // 2초뒤부터 응가 삭제.
         if (isLive) { // 살아있을때만 카운트 올라감.
             $("#ddong-score").val(`${deleteNum}`);
         }
-    }, 150);
+    }, 100);
 }, 2000);
 
 setInterval(() => { // 150ms마다 응가 생성.
     ani();
-}, 150);
+}, 100);

@@ -22,8 +22,8 @@ public class MonsterService {
         for (int j = 1; j < 40; j++) {
             for (int i = 1 + j * 50; i < 51 + j * 50; i++) {
                 Random random = new Random();
-                int attack = random.nextInt(50 * j) + 1;
-                int hp = random.nextInt(50 * j) + 1;
+                int hp = random.nextInt(100 * j) + 50 * j;
+                int attack = random.nextInt((hp / 10) * (random.nextInt(5) + 1)) + 2 * j;
                 Monster monster = new Monster();
                 monster.setAttack(attack);
                 monster.setHp(hp);

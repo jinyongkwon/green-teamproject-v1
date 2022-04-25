@@ -1,5 +1,6 @@
 let startStore = false; // 처음 시작할때만 사용하는 용도
 let isFree = false;
+let isFreeChoose = false;
 
 $("#random-img").click(() => { // 일반뽑기
     if (startStore == false) {
@@ -7,6 +8,7 @@ $("#random-img").click(() => { // 일반뽑기
         weaponNum();
     }
     if ($("#user-coin").val() > 1000) {
+        isFreeChoose = false;
         draw();
     }
 });
@@ -17,6 +19,7 @@ $("#present-img").click(() => { // 무료뽑기
         weaponNum();
     }
     if (isFree == true) {
+        isFreeChoose = true;
         draw();
         freeClick();
     }
@@ -30,7 +33,8 @@ let weaponNum = () => { // 무기 갯수 초기화
 }
 
 function draw() { // 뽑기
-    if (!isFree) {
+    console.log(isFree);
+    if (!isFree || !isFreeChoose) {
         choose();
     }
     console.log(isFree);
@@ -60,6 +64,7 @@ function draw() { // 뽑기
         userPower += 50
     }
     $("#user-power").val(userPower);
+    isFreeChoose = false;
 }
 
 let choose = () => { // 가격 100~1000
