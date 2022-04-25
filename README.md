@@ -1,10 +1,16 @@
 # 통합 웹게임 사이트  - 헤헤
 ---
-### 조원
-- 권진용(팀장)
-- 김무진
-- 유승현
-- 한영인
+# 팀원소개 및 역활
+
+###  |[**jinyongkwon**](https://github.com/jinyongkwon)|TaskMaster  |
+[권진용 (팀장, 온갖 잡무 및 풀스택개발,언급하지않은 기타 업무의 대부분)](https://drive.google.com/file/d/1-7WQKKHfgGntvdoua5ovEru0dJggOG5U/view?usp=sharing)
+#### |[**han-youngin**](https://github.com/han-youngin)| Backend&Admincontrol|
+한영인 (백엔드개발, 관리자 기능 구현) [](http://)
+#### |[**cotiful**](https://github.com/cotiful)  |Backend & Ranking system  |
+[유승현 ( 백엔드개발, 랭킹구현)](https://qph.fs.quoracdn.net/main-qimg-ac3d5bfb2b67893a97a79cb06e46566e.webp)
+#### |[**Misterless**](https://github.com/Misterless)  |Front,Errorcatcher,Js   |
+김무진 (프론트, JS구현, 오류검증)
+
 ---
 ### 의존성
 + devtools (Spring)
@@ -114,6 +120,11 @@
 - id, name, image, url => game
 - id, ranking, score => ranking
 - id, createDate, email, password, updateDate, username => manager
+---
+### 시연영상
+* [로그인및 회원가입](https://www.youtube.com/watch_popup?v=oT_0-2WqUaY)
+* [게임](https://www.youtube.com/watch_popup?v=z81bZgSHJVY)
+* [채팅및 게시판](https://www.youtube.com/watch_popup?v=6ToFD8tmFLw)
 ---
 ### 매니저 서버
 - [매니저서버 깃](https://github.com/han-youngin/manager)
