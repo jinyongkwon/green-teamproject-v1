@@ -23,6 +23,7 @@ import site.metacoding.greenrandomrpg.domain.ranking.Ranking;
 import site.metacoding.greenrandomrpg.domain.user.User;
 import site.metacoding.greenrandomrpg.service.monster.MonsterService;
 import site.metacoding.greenrandomrpg.service.user.UserService;
+import site.metacoding.greenrandomrpg.util.Script;
 import site.metacoding.greenrandomrpg.web.dto.ResponseDto;
 import site.metacoding.greenrandomrpg.web.dto.user.JoinDto;
 import site.metacoding.greenrandomrpg.web.dto.user.PasswordResetReqDto;
@@ -108,16 +109,16 @@ public class UserController {
 
     // 아이디 찾기 데이터 보내기
     @PostMapping("/id-find")
-    public String usernameFind(UsernameRespDto usernameRespDto) {
+    public @ResponseBody String usernameFind(UsernameRespDto usernameRespDto) {
         userService.아이디찾기(usernameRespDto);
-        return "redirect:/";
+        return Script.close("아이디를 성공적으로 이메일로 보냈습니다.");
     }
 
     // 비밀번호 찾기 데이터 보내기
     @PostMapping("/password-find")
-    public String passwordFind(PasswordResetReqDto passwordResetReqDto) {
+    public @ResponseBody String passwordFind(PasswordResetReqDto passwordResetReqDto) {
         userService.패스워드초기화(passwordResetReqDto);
-        return "redirect:/";
+        return Script.close("비밀번호를 성공적으로 이메일로 보냈습니다.");
     }
 
     // 무료뽑기 누른 현재시간 저장
@@ -139,7 +140,7 @@ public class UserController {
     @GetMapping("/monster")
     public String monster() throws InterruptedException {
         monsterService.몬스터삽입();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         return "redirect:/";
     }
 

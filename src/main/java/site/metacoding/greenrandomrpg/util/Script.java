@@ -27,4 +27,13 @@ public class Script {
         sb.append("</script>");
         return sb.toString();
     }
+
+    public static String close(String msg) {
+        StringBuffer sb = new StringBuffer();
+        sb.append("<script>");
+        sb.append("alert('" + msg + "');");
+        sb.append("window.close();");
+        sb.append("</script>");
+        return sb.toString();
+    }
 }
